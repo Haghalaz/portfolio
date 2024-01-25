@@ -1,5 +1,13 @@
 # Portfolio Project
 
+<div style="border-radius: 0.5rem; height: 22rem; width: 100%; overflow: hidden; position: relative;">
+  <img src="./src/assets/imgs/portfolioCover.png" alt="Portfolio" style="object-fit: cover; width: 100%; height: 100%;">
+</div>
+
+## Demo
+
+Check out the live demo of the portfolio [here](https://haghalaz.github.io/portfolio/).
+
 ## Overview
 
 Welcome to my portfolio project! This project serves as a showcase of my skills, projects, and achievements. I hope you find this portfolio informative and engaging.
