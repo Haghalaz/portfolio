@@ -10,6 +10,7 @@ import PAGES from '@data/pages.js';
 
 import Toolbar from '@components/toolbar/';
 import Content from '@components/content/';
+import Demo from '@components/demo/';
 
 function App() {
   useThemeInit();
@@ -30,6 +31,8 @@ function App() {
     <main className="relative h-screen w-screen select-none overflow-hidden transition-all">
       <Content pages={PAGES} windows={windows} t={t} handleWindows={handleWindows} handleWindowsPriority={handleWindowsPriority} />
       <Toolbar pages={PAGES} handler={handleWindows} />
+
+      <Demo />
     </main>
   );
 }
