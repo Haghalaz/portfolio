@@ -14,8 +14,6 @@ export default function Config({ t }: PageProps) {
     i18n: { changeLanguage, language },
   } = useTranslation();
 
-  console.log(useThemeInit());
-
   const [theme, setTheme] = useState<Theme>(useThemeInit());
   const animation = useRef<Player>();
 

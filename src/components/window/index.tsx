@@ -86,8 +86,6 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
 
   useWindowResize(() => setSize((prev: number[]) => [Math.min(window.innerWidth - 100, prev[0]), Math.min(window.innerHeight - 150, prev[1])]));
 
-  useEffect(() => console.log(width, height), [width, height]);
-
   return (
     <animated.div
       className={`absolute flex h-full w-full flex-col overflow-hidden rounded-md border border-b-[2px]  bg-[#e4e4e4]/50  bg-clip-padding shadow-[0px_10px_30px_-5px_rgba(0,0,0,0.3)] backdrop-blur backdrop-filter transition-shadow delay-[0.5s] duration-[0.5s,opacity] hover:shadow-[0px_30px_100px_-10px_rgba(0,0,0,0.4)]  dark:border-[#181818] dark:bg-[#181818]/45 ${
