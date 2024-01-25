@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Welcome to my portfolio project! This project serves as a showcase of my skills, projects, and achievements. I hope you find this portfolio informative and engaging.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Project Showcase:** Highlighting key projects with detailed descriptions, technologies used, and links to live demos or repositories.
+- **About Me Section:** Providing a brief introduction about myself, my skills, and my professional background.
+- **Internationalization (i18n):** The portfolio supports multiple languages.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Technologies Used
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **React:** A JavaScript library for building user interfaces.
+- **Vite:** A fast build tool that leverages esbuild for quick development and optimized production builds.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+- **Spring.js:** A spring physics library for smooth animations.
+- **use-gesture:** A library for adding gesture support to your React components.
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/Haghalaz/portfolio.git`
+2. Navigate to the project directory: `cd portfolio`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open your browser and go to `http://localhost:5173/`
+
+## Usage
+
+Feel free to explore the portfolio by clicking on various sections, projects, and links. If you have any questions or feedback, don't hesitate to reach out through the provided contact details.
+
+## Contact
+
+Feel free to contact me for any inquiries or collaboration opportunities.
+
+- Email: luizneto0213@gmail.com
+- LinkedIn: [Luiz Coelho](https://www.linkedin.com/in/luiz-coelho-neto/)
+
+Thank you for visiting my portfolio!
