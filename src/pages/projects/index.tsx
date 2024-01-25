@@ -33,8 +33,8 @@ export default function Projects({ t }: PageProps) {
 
       <div className="grid grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-3">
         {projects.map(({ id, title, src, skills }, index) => (
-          <div onClick={handleCurrentProject(index)}>
-            <div key={id} className="flex w-full cursor-pointer flex-col gap-4 rounded-md bg-white p-3 opacity-80 hover:opacity-100 dark:bg-gray-900/70">
+          <div key={id} onClick={handleCurrentProject(index)}>
+            <div className="flex w-full cursor-pointer flex-col gap-4 rounded-md bg-white p-3 opacity-80 hover:opacity-100 dark:bg-gray-900/70">
               <img className="h-52 w-full rounded-sm object-cover" src={src} />
 
               <div className="flex items-center justify-between gap-2">
@@ -44,7 +44,7 @@ export default function Projects({ t }: PageProps) {
 
                 <div className="flex gap-2">
                   {skills.map((skill) => (
-                    <Avatar src={`https://skillicons.dev/icons?i=${skill}`} size="xs" alt="avatar" variant="rounded" placeholder={undefined} />
+                    <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="xs" alt="avatar" variant="rounded" placeholder={undefined} />
                   ))}
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Projects({ t }: PageProps) {
                 <div className="flex w-full flex-col items-center justify-between gap-6 lg:flex-row">
                   <div className="group inline-flex flex-wrap items-center gap-3">
                     {currentProject.skills.map((skill) => (
-                      <Avatar src={`https://skillicons.dev/icons?i=${skill}`} size="sm" alt="avatar" variant="rounded" placeholder={undefined} />
+                      <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="sm" alt="avatar" variant="rounded" placeholder={undefined} />
                     ))}
                   </div>
                   <a href={currentProject.repo} target="_blank">
