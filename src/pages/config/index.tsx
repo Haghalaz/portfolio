@@ -4,6 +4,7 @@ import { animated, useSpring } from '@react-spring/web';
 import { useRef, useState } from 'react';
 import { CircleFlag } from 'react-circle-flags';
 import { useTranslation } from 'react-i18next';
+import useThemeInit from '@hooks/useThemeInit';
 
 import { PageProps } from '@src/data/pages';
 type Theme = 'light' | 'dark';
@@ -13,7 +14,9 @@ export default function Config({ t }: PageProps) {
     i18n: { changeLanguage, language },
   } = useTranslation();
 
-  const [theme, setTheme] = useState<Theme>(localStorage.theme || 'dark');
+  console.log(useThemeInit());
+
+  const [theme, setTheme] = useState<Theme>(useThemeInit());
   const animation = useRef<Player>();
 
   const [springs, api] = useSpring(() => ({ from: { opacity: 1, rotate: 0, scale: 1 } }));
@@ -60,7 +63,7 @@ export default function Config({ t }: PageProps) {
               style={{ height: '20px', width: '20px' }}
             />
           </IconButton>
-          <Typography variant="small" className="font-bold text-white" placeholder={t(theme)}>
+          <Typography variant="small" className="font-bold" placeholder={t(theme)}>
             {t(theme)}
           </Typography>
         </div>

@@ -10,6 +10,8 @@ const useThemeInit = () => {
     document.documentElement.classList.toggle('dark', isDarkMode);
     localStorage.theme = isDarkMode ? 'dark' : 'light';
   }, []);
+
+  return localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
 };
 
 export default useThemeInit;
