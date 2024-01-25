@@ -1,0 +1,33 @@
+{
+  "translation": {
+    "locale": "en",
+    "pt": "Portuguese",
+    "en": "English",
+    "dark": "Dark Theme",
+    "light": "Light Theme",
+
+    "Theme": "Theme",
+    "Language": "Language",
+
+    "Dev": "Luiz Coelho",
+    "ShortDescription": "Dev Front-End | Eng. Software | React | Next.js | TailWind",
+    "AboutMe": "About Me",
+    "Description": "My journey into the professional world began in the last years of high school, and since then I have been on a path of constant evolution and learning. My passion for challenges and the pursuit of self-improvement have always driven me. At the moment, my specialization is in the field of Front-end, where I seek to create engaging and functional digital experiences. I have directed my efforts to delving deeper into React and Next.js technologies, recognizing the value of these tools in building interactive and modern interfaces. If you share interests in technology, Front-end development or are looking for meaningful connections, it would be a pleasure to connect and exchange experiences!",
+
+    "About": "About",
+    "Skills": "Skills",
+    "Projects": "Projects",
+    "Contact": "Contact",
+
+    "Skill": "Skill",
+    "Album": "Album",
+    "Fav": "Liked",
+
+    "ProjectsGallery": "Projects Gallery",
+
+    "TechnologiesUsed": "Technologies used",
+
+    "Portfolio": "Portfolio",
+    "PortfolioDescription": "The portfolio development incorporates Spring.js for dynamic animations and Gesture React for tactile interactivity. Efficient construction with Vite as a bundler ensures fast loading times, while the use of Tailwind CSS provides a consistent and easy-to-maintain style. With a responsive layout and intuitive gestures, the portfolio highlights projects and skills in an attractive way, offering an enhanced user experience."
+  }
+}

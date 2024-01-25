@@ -1,0 +1,33 @@
+{
+  "translation": {
+    "locale": "pt-br",
+    "pt": "Português",
+    "en": "Inglês",
+    "dark": "Tema escuro",
+    "light": "Tema claro",
+
+    "Theme": "Tema",
+    "Language": "Idioma",
+
+    "Dev": "Luiz Coelho",
+    "ShortDescription": "Dev Front-End | Eng. Software | React | Next.js | TailWind",
+    "AboutMe": "Sobre Mim",
+    "Description": "Minha jornada no mundo profissional começou nos últimos anos do ensino médio, e desde então, tenho trilhado um caminho de constante evolução e aprendizado. Minha paixão por desafios e pela busca do aperfeiçoamento pessoal sempre me impulsionaram. Neste momento, minha especialização se concentra no campo do Front-end, onde busco criar experiências digitais envolventes e funcionais. Tenho direcionado meus esforços para me aprofundar nas tecnologias React e Next.js, reconhecendo o valor dessas ferramentas na construção de interfaces interativas e modernas. Se você compartilha interesses em tecnologia, desenvolvimento Front-end ou busca conexões significativas, será um prazer conectar e trocar experiências!",
+
+    "About": "Sobre",
+    "Skills": "Habilidades",
+    "Projects": "Projetos",
+    "Contact": "Contato",
+
+    "Skill": "Skill",
+    "Album": "Álbum",
+    "Fav": "Favorito",
+
+    "ProjectsGallery": "Galeria de Projetos",
+
+    "TechnologiesUsed": "Tecnologias utilizadas",
+
+    "Portfolio": "Portfólio",
+    "PortfolioDescription": "O desenvolvimento do portfólio incorpora Spring.js para animações dinâmicas e Gesture React para interatividade tátil. A eficiente construção com Vite como bundler assegura tempos de carregamento rápidos, enquanto o uso do Tailwind CSS proporciona um estilo consistente e fácil de manter. Com um layout responsivo e gestos intuitivos, o portfólio destaca os projetos e habilidades de forma atraente, oferecendo uma experiência de usuário aprimorada."
+  }
+}
