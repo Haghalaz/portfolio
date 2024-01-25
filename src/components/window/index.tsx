@@ -1,5 +1,6 @@
 import { IconButton } from '@material-tailwind/react';
 import { animated, useSpring } from '@react-spring/web';
+import { useWindowResize } from '@src/utils/hooks/useWindowResize';
 import { useDrag } from '@use-gesture/react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { TiArrowMinimise } from 'react-icons/ti';
@@ -82,6 +83,10 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
       rubberband: true,
     }
   );
+
+  useWindowResize(() => setSize((prev: number[]) => [Math.min(window.innerWidth - 100, prev[0]), Math.min(window.innerHeight - 150, prev[1])]));
+
+  useEffect(() => console.log(width, height), [width, height]);
 
   return (
     <animated.div

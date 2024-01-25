@@ -31,7 +31,7 @@ export default function Projects({ t }: PageProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 px-4 py-6">
+      <div className="grid grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-3">
         {projects.map(({ id, title, src, skills }, index) => (
           <div onClick={handleCurrentProject(index)}>
             <div key={id} className="flex w-full cursor-pointer flex-col gap-4 rounded-md bg-white p-3 opacity-80 hover:opacity-100 dark:bg-gray-900/70">
@@ -60,33 +60,38 @@ export default function Projects({ t }: PageProps) {
           className="bg-[#f1f1f1] px-4 py-6 dark:bg-gray-900"
           placeholder={undefined}
         >
-          <div className="grid h-full grid-flow-col grid-cols-6 gap-8">
-            <img className="col-span-2 h-full w-full rounded-xl bg-clip-border object-cover shadow-lg shadow-blue-gray-500/40" src={currentProject.src} />
+          <div className=" grid h-full w-full grid-flow-row grid-cols-1 grid-rows-2 gap-y-8 overflow-auto lg:grid-flow-col lg:grid-cols-6 lg:grid-rows-1 lg:gap-8">
+            <img
+              className="h-full w-full rounded-xl bg-clip-border object-cover shadow-lg shadow-blue-gray-500/40 lg:col-span-2 lg:block"
+              src={currentProject.src}
+            />
 
-            <div className="col-span-4 flex flex-col justify-between">
+            <div className="col-span-4 flex h-full flex-col justify-between gap-8">
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <h5 className="font-sans text-xl font-medium ">{t(currentProject.title)}</h5>
                 </div>
-                <Typography className="line-clamp-[8] font-sans text-base font-light leading-relaxed" placeholder={undefined}>
+                <Typography className="line-clamp-3 font-sans text-base font-light leading-relaxed lg:line-clamp-[8]" placeholder={undefined}>
                   {t(currentProject.description)}
                 </Typography>
               </div>
 
               <div className="space-y-2">
-                <Typography className="font-sans text-sm font-medium" placeholder={undefined}>
+                <Typography className="text-center font-sans text-sm font-medium lg:text-start" placeholder={undefined}>
                   {t('TechnologiesUsed')}
                 </Typography>
-                <div className="flex w-full justify-between">
+                <div className="flex w-full flex-col items-center justify-between gap-6 lg:flex-row">
                   <div className="group inline-flex flex-wrap items-center gap-3">
                     {currentProject.skills.map((skill) => (
                       <Avatar src={`https://skillicons.dev/icons?i=${skill}`} size="sm" alt="avatar" variant="rounded" placeholder={undefined} />
                     ))}
                   </div>
-                  <Button className="flex items-center gap-2 bg-black" placeholder={undefined}>
-                    <BsGithub className="h-4 w-4" />
-                    Github
-                  </Button>
+                  <a href={currentProject.repo} target="_blank">
+                    <Button className="flex items-center gap-2 bg-black" placeholder={undefined}>
+                      <BsGithub className="h-4 w-4" />
+                      Github
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>

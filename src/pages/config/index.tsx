@@ -13,7 +13,7 @@ export default function Config({ t }: PageProps) {
     i18n: { changeLanguage, language },
   } = useTranslation();
 
-  const [theme, setTheme] = useState<Theme>(localStorage.theme);
+  const [theme, setTheme] = useState<Theme>(localStorage.theme || 'dark');
   const animation = useRef<Player>();
 
   const [springs, api] = useSpring(() => ({ from: { opacity: 1, rotate: 0, scale: 1 } }));
@@ -60,7 +60,7 @@ export default function Config({ t }: PageProps) {
               style={{ height: '20px', width: '20px' }}
             />
           </IconButton>
-          <Typography variant="small" className="font-bold" placeholder={t(theme)}>
+          <Typography variant="small" className="font-bold text-white" placeholder={t(theme)}>
             {t(theme)}
           </Typography>
         </div>

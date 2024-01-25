@@ -5,6 +5,7 @@ export type ProjectsType = {
   title: string;
   description: string;
   src: string;
+  repo: string;
   skills: string[];
 };
 
@@ -14,6 +15,7 @@ const PROJECTS: ProjectsType[] = [
     title: 'Portfolio',
     description: 'PortfolioDescription',
     src: PortfolioCover,
+    repo: 'https://github.com/Haghalaz/portfolio',
     skills: ['vite', 'react', 'ts', 'tailwind'],
   },
 ];

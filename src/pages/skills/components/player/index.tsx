@@ -41,7 +41,7 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
   const calculatePercentage = (value: number, total: number) => (total === 0 ? 0 : (value / total) * 100);
 
   return (
-    <div className="grid h-full w-full grid-flow-col grid-cols-6 items-center gap-12 bg-[#f1f1f1] px-6 dark:bg-[#131313]">
+    <div className="grid h-full w-full grid-flow-col grid-cols-6 items-center gap-2 bg-[#f1f1f1] px-4 dark:bg-[#131313] lg:gap-12 lg:px-6">
       <ReactAudioPlayer
         ref={(element) => setPlayer(element)}
         onListen={(evt) => setTimeSong(evt)}
@@ -60,11 +60,11 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
         <Avatar src={`https://skillicons.dev/icons?i=${currentSong?.src}`} size="lg" alt="avatar" variant="rounded" placeholder={undefined} />
 
         <div className="space-y-1 font-semibold">
-          <p className="text-sm leading-6 text-cyan-500 dark:text-cyan-400">{`#${currentSong?.id}`}</p>
-          <h2 className="truncate text-sm leading-6 dark:text-white">{currentSong?.title}</h2>
+          <p className="hidden text-sm leading-6 text-cyan-500 dark:text-cyan-400 lg:block">{`#${currentSong?.id}`}</p>
+          <h2 className="hidden truncate text-sm leading-6 dark:text-white lg:block">{currentSong?.title}</h2>
         </div>
       </div>
-      <div className="col-span-4 w-full px-8">
+      <div className="col-span-4 w-full lg:px-8">
         <div className="relative">
           <div className="overflow-hidden rounded-full  bg-gray-700 dark:bg-gray-700">
             <div className="left-0 top-0 h-1 w-full bg-cyan-500 dark:bg-cyan-400" style={{ width: `${calculatePercentage(timeSong, durationSong)}%` }} />
@@ -89,7 +89,7 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
             </Typography>
           </div>
         </div>
-        <div className="flex items-center justify-between px-8">
+        <div className="flex items-center justify-between lg:px-8">
           <IconButton size="sm" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1} placeholder={undefined}>
             <BsSkipBackwardFill />
           </IconButton>

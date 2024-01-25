@@ -32,16 +32,16 @@ export default function Skills({ t }: PageProps) {
       </div>
 
       <div className="row-span-8 overflow-y-auto">
-        <div className="grid auto-cols-fr grid-flow-col items-center bg-[#cfcfcf] p-2 font-bold dark:bg-[#262626] ">
+        <div className="px- grid auto-cols-fr grid-flow-col items-center bg-[#cfcfcf] px-4 py-2 font-bold dark:bg-[#262626] ">
           <Typography className="font-mono place-self-center dark:opacity-50" variant="small" placeholder={'Skill_Wave'}>
             #
           </Typography>
 
-          <Typography className="font-mono col-span-3" variant="paragraph" placeholder={''}>
+          <Typography className="font-mono col-span-5" variant="paragraph" placeholder={''}>
             {t('Skill')}
           </Typography>
 
-          <Typography className="font-mono col-span-4" variant="small" placeholder={''}>
+          <Typography className="font-mono col-span-2" variant="small" placeholder={''}>
             {t('Album')}
           </Typography>
 

@@ -18,11 +18,11 @@ export default function About({ t }: PageProps) {
         </div>
         <div className="mt-16 flex flex-col items-center">
           <h2 className="text-2xl font-bold ">{t('Dev')}</h2>
-          <small className="text text-sm font-normal dark:text-secondary ">{t('ShortDescription')}</small>
+          <small className="text text-center text-sm font-normal dark:text-secondary ">{t('ShortDescription')}</small>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 px-4 py-6">
+      <div className="grid grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-3">
         <div className="relative col-span-2 flex w-full flex-row items-center justify-between gap-2 rounded-md bg-[#f1f1f1] bg-clip-border p-4 dark:bg-gray-900/90 dark:text-white dark:!shadow-none">
           <div className="h-full space-y-4">
             <h2 className="self-start text-2xl font-bold">{t('AboutMe')}</h2>
@@ -43,7 +43,7 @@ export default function About({ t }: PageProps) {
             <a href="https://github.com/Haghalaz" target="_blank">
               <Avatar
                 src="https://skillicons.dev/icons?i=github"
-                className="shadow-lg hover:shadow-gray-500/70"
+                className="h-8 w-8 shadow-lg hover:shadow-gray-500/70"
                 size="sm"
                 alt="avatar"
                 variant="rounded"
@@ -54,7 +54,7 @@ export default function About({ t }: PageProps) {
             <a href="https://br.linkedin.com/in/luiz-coelho-neto" target="_blank">
               <Avatar
                 src="https://skillicons.dev/icons?i=linkedin"
-                className="shadow-lg hover:shadow-blue-500/70"
+                className="h-8 w-8 shadow-lg hover:shadow-blue-500/70"
                 size="sm"
                 alt="avatar"
                 variant="rounded"
@@ -63,7 +63,7 @@ export default function About({ t }: PageProps) {
             </a>
 
             <a href="https://wa.me/5541995573573" target="_blank">
-              <div className=" rounded-md bg-green-600 p-1.5 shadow-lg hover:shadow-green-500">
+              <div className=" rounded-md bg-green-600 p-1 shadow-lg hover:shadow-green-500">
                 <BsWhatsapp className="h-6 w-6 fill-white"></BsWhatsapp>
               </div>
             </a>

@@ -18,7 +18,7 @@ const SongsList = ({ songs, playMusic }: SongsListProps) => {
         <div
           key={id}
           onClick={() => playMusic(index)}
-          className="grid cursor-pointer auto-cols-fr grid-flow-col items-center bg-[#d5d5d5] p-2 opacity-70 hover:opacity-100 dark:bg-[#131313] dark:opacity-40 dark:hover:opacity-100"
+          className="grid cursor-pointer auto-cols-fr grid-flow-col items-center bg-[#d5d5d5] px-4 py-2 opacity-70 hover:opacity-100 dark:bg-[#131313] dark:opacity-40 dark:hover:opacity-100"
         >
           <div className={`font-mono col-span-1 place-self-center ${active ? 'opacity-100' : 'opacity-30'}'`}>
             {active ? (
@@ -36,15 +36,15 @@ const SongsList = ({ songs, playMusic }: SongsListProps) => {
             )}
           </div>
 
-          <div className="col-span-3 flex flex-row items-center gap-2">
+          <div className="col-span-5 flex flex-row items-center gap-2">
             <Avatar src={`https://skillicons.dev/icons?i=${src}`} size="sm" alt="avatar" variant="rounded" placeholder={undefined} />
 
-            <Typography className="font-mono font-medium " variant="paragraph" placeholder={title}>
+            <Typography className="font-mono truncate font-medium" variant="paragraph" placeholder={title}>
               {title}
             </Typography>
           </div>
 
-          <Typography className="font-mono col-span-4 opacity-70" variant="small" placeholder={title}>
+          <Typography className="font-mono col-span-2 opacity-70" variant="small" placeholder={title}>
             {album}
           </Typography>
 
