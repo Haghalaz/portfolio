@@ -19,6 +19,7 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
   const [[width, height], setSize] = useState<number[]>([0, 0]);
   const [open, setOpen] = useState<boolean>(windows.includes(name));
   const [current, setCurrent] = useState<boolean>();
+  const [defaultSize, setDefaultSize] = useState<number[]>([0, 0]);
 
   const target = useRef(null);
 
@@ -48,20 +49,20 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
   useEffect(() => {
     switch (variant) {
       case 'sm':
-        setSize([200, 200]);
+        setDefaultSize([200, 200]);
         break;
       case 'md':
-        setSize([400, 250]);
+        setDefaultSize([400, 250]);
         break;
       case 'lg':
-        setSize([800, 500]);
+        setDefaultSize([800, 500]);
         break;
       case 'xl':
-        setSize([1000, 750]);
+        setDefaultSize([1000, 750]);
         break;
 
       default:
-        setSize([400, 200]);
+        setDefaultSize([400, 200]);
         break;
     }
   }, [variant]);
@@ -84,7 +85,7 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
     }
   );
 
-  useWindowResize(() => setSize((prev: number[]) => [Math.min(window.innerWidth - 100, prev[0]), Math.min(window.innerHeight - 150, prev[1])]));
+  useWindowResize(() => setSize([Math.min(window.innerWidth - 100, defaultSize[0]), Math.min(window.innerHeight - 150, defaultSize[1])]));
 
   return (
     <animated.div
