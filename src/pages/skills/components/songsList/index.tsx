@@ -18,7 +18,9 @@ const SongsList = ({ songs, playMusic }: SongsListProps) => {
         <div
           key={id}
           onClick={() => playMusic(index)}
-          className="grid cursor-pointer auto-cols-fr grid-flow-col items-center bg-[#d5d5d5] px-4 py-2 opacity-70 hover:opacity-100 dark:bg-[#131313] dark:opacity-40 dark:hover:opacity-100"
+          className={`grid cursor-pointer auto-cols-fr grid-flow-col items-center bg-[#d5d5d5] px-4 py-2 dark:bg-[#131313] ${
+            active ? 'opacity-100' : 'opacity-70 hover:opacity-100 dark:opacity-40 dark:hover:opacity-100'
+          }`}
         >
           <div className={`font-mono col-span-1 place-self-center ${active ? 'opacity-100' : 'opacity-30'}'`}>
             {active ? (
