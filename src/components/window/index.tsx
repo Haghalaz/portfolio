@@ -13,13 +13,31 @@ interface CardProps {
   variant: 'sm' | 'md' | 'lg' | 'xl' | null;
   name: string;
 }
+const getSize = (variant: string | null) => {
+  switch (variant) {
+    case 'sm':
+      return [200, 200];
+
+    case 'md':
+      return [400, 250];
+
+    case 'lg':
+      return [800, 500];
+
+    case 'xl':
+      return [1000, 750];
+
+    default:
+      return [400, 200];
+  }
+};
 
 const Window = ({ children, windows, handleOpen, handlePriority, variant, name }: CardProps) => {
   const [lastPosition, setLastPosition] = useState<number[]>([0, 0]);
-  const [[width, height], setSize] = useState<number[]>([0, 0]);
+  const [[width, height], setSize] = useState<number[]>(getSize(variant));
   const [open, setOpen] = useState<boolean>(windows.includes(name));
   const [current, setCurrent] = useState<boolean>();
-  const [defaultSize, setDefaultSize] = useState<number[]>([0, 0]);
+  const [defaultSize] = useState<number[]>(getSize(variant));
 
   const target = useRef(null);
 
@@ -45,27 +63,6 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
       api({ scale: 1, x, y, opacity: 1, rotateX: 0 });
     }
   }, [api, lastPosition, open]);
-
-  useEffect(() => {
-    switch (variant) {
-      case 'sm':
-        setDefaultSize([200, 200]);
-        break;
-      case 'md':
-        setDefaultSize([400, 250]);
-        break;
-      case 'lg':
-        setDefaultSize([800, 500]);
-        break;
-      case 'xl':
-        setDefaultSize([1000, 750]);
-        break;
-
-      default:
-        setDefaultSize([400, 200]);
-        break;
-    }
-  }, [variant]);
 
   useDrag(
     ({ offset: [x, y] }) => {
