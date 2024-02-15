@@ -28,6 +28,9 @@
     "TechnologiesUsed": "Technologies used",
 
     "Portfolio": "Portfolio",
-    "PortfolioDescription": "The portfolio development incorporates Spring.js for dynamic animations and Gesture React for tactile interactivity. Efficient construction with Vite as a bundler ensures fast loading times, while the use of Tailwind CSS provides a consistent and easy-to-maintain style. With a responsive layout and intuitive gestures, the portfolio highlights projects and skills in an attractive way, offering an enhanced user experience."
+    "PortfolioDescription": "The portfolio development incorporates Spring.js for dynamic animations and Gesture React for tactile interactivity. Efficient construction with Vite as a bundler ensures fast loading times, while the use of Tailwind CSS provides a consistent and easy-to-maintain style. With a responsive layout and intuitive gestures, the portfolio highlights projects and skills in an attractive way, offering an enhanced user experience.",
+
+    "Bounce": "BOUNCE",
+    "BounceDescription": "BOUNCE is a project designed to explore the capabilities of Pixi.js. Utilizing React, Vite, Tailwind CSS, and Pixi.js, BOUNCE is a web development project with captivating 2D rendering and interactive experiences."
   }
 }
