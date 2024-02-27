@@ -8,6 +8,7 @@ export type SongsType = {
   audio: string;
   color: string[];
   active: boolean;
+  favorite?: boolean;
 };
 
 const SONGS: SongsType[] = [
