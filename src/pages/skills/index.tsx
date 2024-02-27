@@ -6,6 +6,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import { LuWaves } from 'react-icons/lu';
 import AudioPlayer from './components/player';
 import SongsList from './components/songsList';
+import { useHandleFav } from '@hooks/skills/useHandleFav';
 
 export default function Skills({ t }: PageProps) {
   const [player, setPlayer] = useState<ReactAudioPlayer | null>();
@@ -13,6 +14,10 @@ export default function Skills({ t }: PageProps) {
   const [songs, setSongs] = useState(SONGS);
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const { handleOnFav } = useHandleFav({
+    setSongs,
+    songs
+  });
 
   const playMusic = async (index: number) => {
     setCurrentSong(songs[index]);
@@ -50,7 +55,7 @@ export default function Skills({ t }: PageProps) {
           </Typography>
         </div>
 
-        <SongsList songs={songs} playMusic={playMusic} />
+        <SongsList songs={songs} playMusic={playMusic} handleOnFav={handleOnFav} />
       </div>
 
       <div className="row-span-3">
