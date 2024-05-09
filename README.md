@@ -1,7 +1,7 @@
 # Portfolio Project
 
 <div style="border-radius: 0.5rem; height: 22rem; width: 100%; overflow: hidden; position: relative;">
-  <img src="./src/assets/imgs/portfolioCover.png" alt="Portfolio" style="object-fit: cover; width: 100%; height: 100%;">
+  <img src="./src/assets/imgs/portfolioCover.jpg" alt="Portfolio" style="object-fit: cover; width: 100%; height: 100%;">
 </div>
 
 ## Demo

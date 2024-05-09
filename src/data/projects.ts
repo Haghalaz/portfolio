@@ -1,4 +1,4 @@
-import PortfolioCover from '@assets/imgs/portfolioCover.png';
+import PortfolioCover from '@assets/imgs/portfolioCover.jpg';
 
 export type ProjectsType = {
   id: number;
