@@ -2,7 +2,7 @@ import * as React from 'react';
 import { animated, useSpringValue } from '@react-spring/web';
 import { clamp } from '@react-spring/shared';
 
-import { useWindowResize } from '../../../../utils/hooks/useWindowResize';
+import { useWindowResize } from '@hooks/useWindowResize.ts';
 
 import { DockContext } from './DockContext';
 
@@ -10,6 +10,7 @@ interface DockProps {
   children: React.ReactNode;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const DOCK_ZOOM_LIMIT = [-100, 50];
 
 export const Dock = ({ children }: DockProps) => {

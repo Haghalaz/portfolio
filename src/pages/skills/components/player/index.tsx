@@ -1,4 +1,4 @@
-import { Avatar, IconButton, Typography, Slider, Tooltip } from '@material-tailwind/react';
+import { Avatar, IconButton, Slider, Tooltip, Typography } from '@material-tailwind/react';
 import { Dispatch, SetStateAction, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import { BsPause, BsPlay, BsSkipBackwardFill, BsSkipForwardFill } from 'react-icons/bs';

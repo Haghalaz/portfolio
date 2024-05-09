@@ -12,6 +12,7 @@ export default function About({ t }: PageProps) {
 
           <Avatar
             className="absolute -bottom-12 flex h-32  w-32 items-center justify-center rounded-full border-4 border-[#f1f1f1]  contrast-100 saturate-50"
+            alt={'Luiz Coelho profile pic'}
             src={profilePic}
             placeholder={undefined}
           />
@@ -36,6 +37,7 @@ export default function About({ t }: PageProps) {
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=haghalaz&layout=compact&locale=${t(
                 'locale'
               )}&hide_border=true&title_color=61DBFB&text_color=fefefe&bg_color=0d1117`}
+              alt="GitHub language stats"
             />
           </div>
 
@@ -45,7 +47,7 @@ export default function About({ t }: PageProps) {
                 src="https://skillicons.dev/icons?i=github"
                 className="h-8 w-8 shadow-lg hover:shadow-gray-500/70"
                 size="sm"
-                alt="avatar"
+                alt="GitHub logo"
                 variant="rounded"
                 placeholder={undefined}
               />
@@ -56,7 +58,7 @@ export default function About({ t }: PageProps) {
                 src="https://skillicons.dev/icons?i=linkedin"
                 className="h-8 w-8 shadow-lg hover:shadow-blue-500/70"
                 size="sm"
-                alt="avatar"
+                alt="Linkedin logo"
                 variant="rounded"
                 placeholder={undefined}
               />
@@ -71,7 +73,7 @@ export default function About({ t }: PageProps) {
 
           <div className="relative flex w-full flex-col items-center rounded-md bg-[#f1f1f1]/70 bg-clip-border p-4 dark:bg-gray-900/70 dark:text-white dark:!shadow-none">
             <a href="https://www.codewars.com/users/Haghalaz" target="_blank">
-              <img className="shadow-lg hover:shadow-gray-800/20" src="https://www.codewars.com/users/Haghalaz/badges/large" />
+              <img className="shadow-lg hover:shadow-gray-800/20" src="https://www.codewars.com/users/Haghalaz/badges/large" alt="Codewars badge" />
             </a>
           </div>
         </div>
