@@ -7,3 +7,63 @@
 html {
   font-family: 'Nunito Sans', sans-serif;
 }
+
+/*********** Baseline, reset styles ***********/
+.volume {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 16rem;
+}
+
+/* Removes default focus */
+.volume:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+.volume::-webkit-slider-runnable-track {
+  background-color: #e3e3e3;
+  border-radius: 0.5rem;
+  height: 0.1rem;
+}
+
+/* slider thumb */
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -5.6000000000000005px; /* Centers thumb on the track */
+  background-color: #00bcd4;
+  border-radius: 0.5rem;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+.volume:focus::-webkit-slider-thumb {
+  outline: 3px solid #00bcd4;
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+.volume::-moz-range-track {
+  background-color: #e3e3e3;
+  border-radius: 0.5rem;
+  height: 0.1rem;
+}
+
+/* slider thumb */
+.volume::-moz-range-thumb {
+  background-color: #00bcd4;
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0.5rem;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+.volume:focus::-moz-range-thumb {
+  outline: 3px solid #00bcd4;
+  outline-offset: 0.125rem;
+}

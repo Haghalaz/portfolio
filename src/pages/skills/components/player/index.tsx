@@ -79,8 +79,9 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
               <input
                 value={volumeSong}
                 onChange={(evt) => setVolumeSong(Number(evt.target.value))}
-                className="h-0.5 w-full cursor-pointer accent-cyan-500"
+                className="volume cursor-pointer rounded-full"
                 type="range"
+                name="Volume control"
                 min="0"
                 max="100"
               />
