@@ -89,7 +89,7 @@ export default function Projects({ t }: PageProps) {
                     ))}
                   </div>
                   <a href={currentProject.repo} target="_blank">
-                    <Button className="flex items-center gap-2 bg-black" placeholder={undefined}>
+                    <Button className="flex items-center gap-2 bg-black" aria-label="See project on GitHub" placeholder={undefined}>
                       <BsGithub className="h-4 w-4" />
                       Github
                     </Button>
