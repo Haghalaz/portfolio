@@ -35,14 +35,14 @@ export default function Projects({ t }: PageProps) {
         {projects.map(({ id, title, src, skills }, index) => (
           <div key={id} onClick={handleCurrentProject(index)}>
             <div className="flex w-full cursor-pointer flex-col gap-4 rounded-md bg-white p-3 opacity-80 hover:opacity-100 dark:bg-gray-900/70">
-              <img className="h-52 w-full rounded-sm object-cover" src={src} />
+              <img className="h-52 w-full rounded-sm object-cover" src={src} alt={`${title} Cover`} />
 
-              <div className="flex items-center justify-between gap-2">
-                <Typography className="truncate text-lg font-medium" placeholder={undefined}>
+              <div className="grid w-full grid-cols-2 items-center justify-between gap-2">
+                <Typography className="max-w-1/3 truncate text-lg font-medium" placeholder={undefined}>
                   {t(title)}
                 </Typography>
 
-                <div className="flex gap-2">
+                <div className="flex justify-end gap-2">
                   {skills.map((skill) => (
                     <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="xs" alt="avatar" variant="rounded" placeholder={undefined} />
                   ))}
@@ -64,6 +64,7 @@ export default function Projects({ t }: PageProps) {
             <img
               className="h-full w-full rounded-xl bg-clip-border object-cover shadow-lg shadow-blue-gray-500/40 lg:col-span-2 lg:block"
               src={currentProject.src}
+              alt={`${currentProject.title} Cover`}
             />
 
             <div className="col-span-4 flex h-full flex-col justify-between gap-8">
