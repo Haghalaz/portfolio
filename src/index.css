@@ -14,7 +14,7 @@ html {
   appearance: none;
   background: transparent;
   cursor: pointer;
-  width: 16rem;
+  width: max-content;
 }
 
 /* Removes default focus */
