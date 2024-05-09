@@ -1,13 +1,19 @@
-import { Typography } from '@material-tailwind/react';
+import { useEffect, useState } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
+import { useSongContext } from '@src/utils/contexts/songContext.tsx';
+
 import { PageProps } from '@src/data/pages';
 import SONGS from '@src/data/songs';
-import { useState } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
+
 import { LuWaves } from 'react-icons/lu';
+
+import { Typography } from '@material-tailwind/react';
 import AudioPlayer from './components/player';
 import SongsList from './components/songsList';
 
 export default function Skills({ t }: PageProps) {
+  const { setSong } = useSongContext();
+
   const [player, setPlayer] = useState<ReactAudioPlayer | null>();
 
   const [songs, setSongs] = useState(SONGS);
@@ -21,6 +27,10 @@ export default function Skills({ t }: PageProps) {
 
     await player?.audioEl.current?.play();
   };
+
+  useEffect(() => {
+    isPlaying ? setSong(currentSong) : setSong(null);
+  }, [isPlaying, currentSong, setSong]);
 
   return (
     <div className="grid h-full grid-rows-12">

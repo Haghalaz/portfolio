@@ -11,6 +11,8 @@ import PAGES from '@data/pages.js';
 import Toolbar from '@components/toolbar/';
 import Content from '@components/content/';
 import Demo from '@components/demo/';
+import CurrentSong from '@components/currentSong';
+import { SongProvider } from '@src/utils/contexts/songContext.tsx';
 
 function App() {
   useThemeInit();
@@ -29,9 +31,14 @@ function App() {
 
   return (
     <main className="relative h-dvh w-dvw select-none overflow-hidden transition-all">
-      <Content pages={PAGES} windows={windows} t={t} handleWindows={handleWindows} handleWindowsPriority={handleWindowsPriority} />
-      <Toolbar pages={PAGES} handler={handleWindows} />
+      <SongProvider>
+        <>
+          <Content pages={PAGES} windows={windows} t={t} handleWindows={handleWindows} handleWindowsPriority={handleWindowsPriority} />
+          <CurrentSong />
+        </>
+      </SongProvider>
 
+      <Toolbar pages={PAGES} handler={handleWindows} />
       <Demo />
     </main>
   );
