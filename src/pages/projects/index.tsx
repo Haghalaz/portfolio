@@ -35,7 +35,7 @@ export default function Projects({ t }: PageProps) {
         {projects.map(({ id, title, src, skills }, index) => (
           <div key={id} onClick={handleCurrentProject(index)}>
             <div className="flex w-full cursor-pointer flex-col gap-4 rounded-md bg-white p-3 opacity-80 hover:opacity-100 dark:bg-gray-900/70">
-              <img className="h-52 w-full rounded-sm object-cover" src={src} alt={`${title} Cover`} />
+              <img className="h-52 w-full rounded-sm object-cover" src={src} alt={`${title} Cover`} loading="lazy" />
 
               <div className="grid w-full grid-cols-2 items-center justify-between gap-2">
                 <Typography className="max-w-1/3 truncate text-lg font-medium" placeholder={undefined}>
@@ -65,6 +65,7 @@ export default function Projects({ t }: PageProps) {
               className="h-full w-full rounded-xl bg-clip-border object-cover shadow-lg shadow-blue-gray-500/40 lg:col-span-2 lg:block"
               src={currentProject.src}
               alt={`${currentProject.title} Cover`}
+              loading="lazy"
             />
 
             <div className="col-span-4 flex h-full flex-col justify-between gap-8">

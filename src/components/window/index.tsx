@@ -57,10 +57,10 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
 
   useEffect(() => {
     if (!open) {
-      api({ scale: 0.05, x: 0, y: 500, opacity: 0, rotateX: -45 });
+      api.start({ scale: 0.05, x: 0, y: 500, opacity: 0, rotateX: -45 });
     } else {
       const [x, y] = lastPosition;
-      api({ scale: 1, x, y, opacity: 1, rotateX: 0 });
+      api.start({ scale: 1, x, y, opacity: 1, rotateX: 0 });
     }
   }, [api, lastPosition, open]);
 

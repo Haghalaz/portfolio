@@ -1,5 +1,4 @@
 import PortfolioCover from '@assets/imgs/portfolioCover.png';
-import BounceCover from '@assets/imgs/bounceCover.png';
 
 export type ProjectsType = {
   id: number;
@@ -23,7 +22,7 @@ const PROJECTS: ProjectsType[] = [
     id: 2,
     title: 'Bounce',
     description: 'BounceDescription',
-    src: BounceCover,
+    src: 'https://raw.githubusercontent.com/Haghalaz/bounce/main/src/assets/imgs/bounceCover.png',
     repo: 'https://github.com/Haghalaz/bounce',
     skills: ['vite', 'react', 'ts', 'tailwind'],
   },
