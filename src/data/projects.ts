@@ -27,6 +27,14 @@ const PROJECTS: ProjectsType[] = [
     repo: 'https://github.com/Haghalaz/bounce',
     skills: ['vite', 'react', 'ts', 'tailwind'],
   },
+  {
+    id: 3,
+    title: 'MovieDiscover',
+    description: 'MovieDiscoverDescription',
+    src: 'https://raw.githubusercontent.com/Haghalaz/movie-discover/main/src/assets/project-cover.png',
+    repo: 'https://github.com/Haghalaz/movie-discover',
+    skills: ['vite', 'react', 'ts', 'tailwind'],
+  },
 ];
 
 export default PROJECTS;
