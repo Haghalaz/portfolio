@@ -105,7 +105,7 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
         className="flex h-10 w-full cursor-grab touch-none items-center justify-between bg-[#C1D0D9] p-2 active:cursor-grabbing dark:bg-[#181818]"
       >
         <small className="select-none font-bold">{name}</small>
-        <IconButton onClick={() => handleOpen(name)} placeholder={undefined} variant="text">
+        <IconButton aria-label="Minimize window" onClick={() => handleOpen(name)} placeholder={undefined} variant="text">
           <TiArrowMinimise className="h-5 w-5 fill-black dark:fill-white" />
         </IconButton>
       </animated.div>

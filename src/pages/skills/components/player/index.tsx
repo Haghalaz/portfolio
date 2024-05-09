@@ -112,15 +112,21 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
           </div>
 
           <div className="flex items-center justify-between lg:px-8">
-            <IconButton size="sm" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1} placeholder={undefined}>
+            <IconButton aria-label="Previous song" size="sm" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1} placeholder={undefined}>
               <BsSkipBackwardFill />
             </IconButton>
 
-            <IconButton onClick={handleStopPlayMusic} size="md" placeholder={undefined} className="rounded-full">
+            <IconButton aria-label="Play/Pause song" onClick={handleStopPlayMusic} size="md" placeholder={undefined} className="rounded-full">
               {isPlaying ? <BsPause className="h-6 w-6" /> : <BsPlay className="h-6 w-6" />}
             </IconButton>
 
-            <IconButton onClick={handlerChangeMusic('next')} size="sm" disabled={currentSong.id === songs.length} placeholder={undefined}>
+            <IconButton
+              aria-label="Next Song"
+              onClick={handlerChangeMusic('next')}
+              size="sm"
+              disabled={currentSong.id === songs.length}
+              placeholder={undefined}
+            >
               <BsSkipForwardFill />
             </IconButton>
           </div>

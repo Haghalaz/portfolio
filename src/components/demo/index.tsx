@@ -10,7 +10,7 @@ const Demo = () => {
     <>
       {isOpen && (
         <div className="absolute bottom-0 right-0 m-6 hidden aspect-video w-[24rem] select-none rounded-md bg-white ring-2 ring-white lg:block">
-          <button className="absolute right-2 top-2 z-10 rounded-md bg-gray-800 p-1" onClick={() => setIsOpen(false)}>
+          <button className="absolute right-2 top-2 z-10 rounded-md bg-gray-800 p-1" aria-label="Close video" onClick={() => setIsOpen(false)}>
             <BsX className="h-5 w-5 fill-white" />
           </button>
           <video className="h-full w-full rounded-md" autoPlay loop muted>

@@ -64,7 +64,7 @@ export default function About({ t }: PageProps) {
               />
             </a>
 
-            <a href="https://wa.me/5541995573573" target="_blank">
+            <a href="https://wa.me/5541995573573" aria-label="Contact me using Whatsapp" target="_blank">
               <div className=" rounded-md bg-green-600 p-1 shadow-lg hover:shadow-green-500">
                 <BsWhatsapp className="h-6 w-6 fill-white"></BsWhatsapp>
               </div>
