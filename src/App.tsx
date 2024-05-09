@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <main className="relative h-screen w-screen select-none overflow-hidden transition-all">
+    <main className="relative h-dvh w-dvw select-none overflow-hidden transition-all">
       <Content pages={PAGES} windows={windows} t={t} handleWindows={handleWindows} handleWindowsPriority={handleWindowsPriority} />
       <Toolbar pages={PAGES} handler={handleWindows} />
 

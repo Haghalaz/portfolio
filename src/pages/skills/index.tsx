@@ -31,7 +31,7 @@ export default function Skills({ t }: PageProps) {
         </Typography>
       </div>
 
-      <div className="row-span-8 overflow-y-auto">
+      <div className="row-span-6 overflow-y-auto xl:row-span-8">
         <div className="px- grid auto-cols-fr grid-flow-col items-center bg-[#cfcfcf] px-4 py-2 font-bold dark:bg-[#262626] ">
           <Typography className="font-mono place-self-center dark:opacity-50" variant="small" placeholder={'Skill_Wave'}>
             #
@@ -53,7 +53,7 @@ export default function Skills({ t }: PageProps) {
         <SongsList songs={songs} playMusic={playMusic} />
       </div>
 
-      <div className="row-span-3">
+      <div className="row-span-5 xl:row-span-3">
         <AudioPlayer
           player={player}
           setPlayer={setPlayer}
