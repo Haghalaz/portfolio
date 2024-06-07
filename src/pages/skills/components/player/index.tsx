@@ -64,7 +64,7 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
 
         <div className="col-span-2 flex justify-between gap-4 sm:flex-col ">
           <div className="flex items-center justify-center gap-2 lg:justify-start">
-            <Avatar src={`https://skillicons.dev/icons?i=${currentSong?.src}`} size="lg" alt="avatar" variant="rounded" placeholder={undefined} />
+            <Avatar src={`https://skillicons.dev/icons?i=${currentSong?.src}`} size="lg" alt="avatar" variant="rounded" />
 
             <div className="hidden space-y-1 font-semibold lg:block">
               <p className="text-sm leading-6 text-cyan-500 dark:text-cyan-400">{`#${currentSong?.id}`}</p>
@@ -90,43 +90,27 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
         </div>
 
         <div className="col-span-6 w-full lg:px-8">
-          <Slider
-            size="sm"
-            color="cyan"
-            defaultValue={calculatePercentage(timeSong, durationSong)}
-            value={calculatePercentage(timeSong, durationSong)}
-            placeholder={undefined}
-          />
+          <Slider size="sm" color="cyan" defaultValue={calculatePercentage(timeSong, durationSong)} value={calculatePercentage(timeSong, durationSong)} />
 
           <div className="flex justify-between py-2 text-sm font-medium tabular-nums leading-6">
             <div className="dark:text-slate-100 text-cyan-500">
-              <Typography variant="small" placeholder={undefined}>
-                {formatDuration(timeSong)}
-              </Typography>
+              <Typography variant="small">{formatDuration(timeSong)}</Typography>
             </div>
             <div className="text-slate-500 dark:text-white">
-              <Typography variant="small" placeholder={undefined}>
-                {formatDuration(durationSong)}
-              </Typography>
+              <Typography variant="small">{formatDuration(durationSong)}</Typography>
             </div>
           </div>
 
           <div className="flex items-center justify-between lg:px-8">
-            <IconButton aria-label="Previous song" size="sm" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1} placeholder={undefined}>
+            <IconButton aria-label="Previous song" size="sm" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1}>
               <BsSkipBackwardFill />
             </IconButton>
 
-            <IconButton aria-label="Play/Pause song" onClick={handleStopPlayMusic} size="md" placeholder={undefined} className="rounded-full">
+            <IconButton aria-label="Play/Pause song" onClick={handleStopPlayMusic} size="md" className="rounded-full">
               {isPlaying ? <BsPause className="h-6 w-6" /> : <BsPlay className="h-6 w-6" />}
             </IconButton>
 
-            <IconButton
-              aria-label="Next Song"
-              onClick={handlerChangeMusic('next')}
-              size="sm"
-              disabled={currentSong.id === songs.length}
-              placeholder={undefined}
-            >
+            <IconButton aria-label="Next Song" onClick={handlerChangeMusic('next')} size="sm" disabled={currentSong.id === songs.length}>
               <BsSkipForwardFill />
             </IconButton>
           </div>

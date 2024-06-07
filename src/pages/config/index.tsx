@@ -52,13 +52,7 @@ export default function Config({ t }: PageProps) {
         </Typography>
 
         <div className="flex cursor-pointer items-center gap-2">
-          <IconButton
-            aria-label="Change theme"
-            className="h-8 w-8 rounded-full p-2"
-            variant={theme === 'light' ? 'filled' : 'text'}
-            ripple={false}
-            placeholder={undefined}
-          >
+          <IconButton aria-label="Change theme" className="h-8 w-8 rounded-full p-2" variant={theme === 'light' ? 'filled' : 'text'} ripple={false}>
             <Player
               ref={animation as React.LegacyRef<Player>}
               keepLastFrame={true}
@@ -86,7 +80,7 @@ export default function Config({ t }: PageProps) {
 
         <div className="flex cursor-pointer items-center gap-2">
           <animated.div style={{ ...springs }}>
-            <IconButton aria-label="Change language" className="h-8 w-8 rounded-full p-4" variant="text" ripple={false} placeholder={undefined}>
+            <IconButton aria-label="Change language" className="h-8 w-8 rounded-full p-4" variant="text" ripple={false}>
               <CircleFlag className="h-full w-full" countryCode={language === 'en' ? 'us' : 'br'} />
             </IconButton>
           </animated.div>

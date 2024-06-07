@@ -23,9 +23,7 @@ export default function Projects({ t }: PageProps) {
         <div className="relative flex h-24 w-full items-center justify-center rounded-xl bg-cover">
           <div className="absolute z-10 flex items-center justify-center gap-2">
             <GiTwirlyFlower className="h-6 w-6 fill-white" />
-            <Typography className="text-2xl font-bold text-white" placeholder={undefined}>
-              {t('ProjectsGallery')}
-            </Typography>
+            <Typography className="text-2xl font-bold text-white">{t('ProjectsGallery')}</Typography>
           </div>
           <div className="absolute flex h-24 w-full rounded-xl bg-[url(https://free4kwallpapers.com/uploads/originals/2016/05/14/acer-predator-%7C-multi-color--wallpaper.jpg)] bg-cover bg-center bg-no-repeat opacity-80" />
         </div>
@@ -38,13 +36,11 @@ export default function Projects({ t }: PageProps) {
               <img className="h-52 w-full rounded-sm object-cover" src={src} alt={`${title} Cover`} loading="lazy" />
 
               <div className="grid w-full grid-cols-2 items-center justify-between gap-2">
-                <Typography className="max-w-1/3 truncate text-lg font-medium" placeholder={undefined}>
-                  {t(title)}
-                </Typography>
+                <Typography className="max-w-1/3 truncate text-lg font-medium">{t(title)}</Typography>
 
                 <div className="flex justify-end gap-2">
                   {skills.map((skill) => (
-                    <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="xs" alt="avatar" variant="rounded" placeholder={undefined} />
+                    <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="xs" alt="avatar" variant="rounded" />
                   ))}
                 </div>
               </div>
@@ -52,14 +48,7 @@ export default function Projects({ t }: PageProps) {
           </div>
         ))}
 
-        <Drawer
-          placement="bottom"
-          open={openDetails}
-          onClose={handleDetails}
-          size={400}
-          className="bg-[#f1f1f1] px-4 py-6 dark:bg-gray-900"
-          placeholder={undefined}
-        >
+        <Drawer placement="bottom" open={openDetails} onClose={handleDetails} size={400} className="bg-[#f1f1f1] px-4 py-6 dark:bg-gray-900">
           <div className=" grid h-full w-full grid-flow-row grid-cols-1 grid-rows-2 gap-y-8 overflow-auto lg:grid-flow-col lg:grid-cols-6 lg:grid-rows-1 lg:gap-8">
             <img
               className="h-full w-full rounded-xl bg-clip-border object-cover shadow-lg shadow-blue-gray-500/40 lg:col-span-2 lg:block"
@@ -73,23 +62,21 @@ export default function Projects({ t }: PageProps) {
                 <div className="flex items-center justify-between">
                   <h5 className="font-sans text-xl font-medium ">{t(currentProject.title)}</h5>
                 </div>
-                <Typography className="line-clamp-3 font-sans text-base font-light leading-relaxed lg:line-clamp-[8]" placeholder={undefined}>
+                <Typography className="line-clamp-3 font-sans text-base font-light leading-relaxed lg:line-clamp-[8]">
                   {t(currentProject.description)}
                 </Typography>
               </div>
 
               <div className="space-y-2">
-                <Typography className="text-center font-sans text-sm font-medium lg:text-start" placeholder={undefined}>
-                  {t('TechnologiesUsed')}
-                </Typography>
+                <Typography className="text-center font-sans text-sm font-medium lg:text-start">{t('TechnologiesUsed')}</Typography>
                 <div className="flex w-full flex-col items-center justify-between gap-6 lg:flex-row">
                   <div className="group inline-flex flex-wrap items-center gap-3">
                     {currentProject.skills.map((skill) => (
-                      <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="sm" alt="avatar" variant="rounded" placeholder={undefined} />
+                      <Avatar key={skill} src={`https://skillicons.dev/icons?i=${skill}`} size="sm" alt="avatar" variant="rounded" />
                     ))}
                   </div>
                   <a href={currentProject.repo} target="_blank">
-                    <Button className="flex items-center gap-2 bg-black" aria-label="See project on GitHub" placeholder={undefined}>
+                    <Button className="flex items-center gap-2 bg-black" aria-label="See project on GitHub">
                       <BsGithub className="h-4 w-4" />
                       Github
                     </Button>

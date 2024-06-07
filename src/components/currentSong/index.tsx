@@ -6,9 +6,9 @@ export default function CurrentSong() {
 
   return (
     song && (
-      <div className="animate-fade-in absolute left-4 top-4 z-0">
+      <div className="absolute left-4 top-4 z-0 animate-fade-in">
         <div className="flex items-center gap-2 opacity-40">
-          <Avatar src={`https://skillicons.dev/icons?i=${song.src}`} size="md" alt="avatar" variant="rounded" placeholder={undefined} />
+          <Avatar src={`https://skillicons.dev/icons?i=${song.src}`} size="md" alt="avatar" variant="rounded" />
 
           <div className="tracking-widest text-white">
             <p>{song.title}</p>

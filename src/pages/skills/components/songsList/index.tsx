@@ -39,7 +39,7 @@ const SongsList = ({ songs, playMusic }: SongsListProps) => {
           </div>
 
           <div className="col-span-5 flex flex-row items-center gap-2">
-            <Avatar src={`https://skillicons.dev/icons?i=${src}`} size="sm" alt="avatar" variant="rounded" placeholder={undefined} />
+            <Avatar src={`https://skillicons.dev/icons?i=${src}`} size="sm" alt="avatar" variant="rounded" />
 
             <Typography className="font-mono truncate font-medium" variant="paragraph" placeholder={title}>
               {title}

@@ -14,7 +14,6 @@ export default function About({ t }: PageProps) {
             className="absolute -bottom-12 flex h-32  w-32 items-center justify-center rounded-full border-4 border-[#f1f1f1]  contrast-100 saturate-50"
             alt={'Luiz Coelho profile pic'}
             src={profilePic}
-            placeholder={undefined}
           />
         </div>
         <div className="mt-16 flex flex-col items-center">
@@ -49,7 +48,6 @@ export default function About({ t }: PageProps) {
                 size="sm"
                 alt="GitHub logo"
                 variant="rounded"
-                placeholder={undefined}
               />
             </a>
 
@@ -60,7 +58,6 @@ export default function About({ t }: PageProps) {
                 size="sm"
                 alt="Linkedin logo"
                 variant="rounded"
-                placeholder={undefined}
               />
             </a>
 
