@@ -38,7 +38,7 @@ export const Dock = ({ children }: DockProps) => {
     <DockContext.Provider value={{ hovered, setIsZooming, width, zoomLevel }}>
       <animated.div
         ref={dockRef}
-        className="fixed bottom-3 left-2/4 z-[99] box-content flex h-12 origin-[center_bottom] -translate-x-2/4 items-end gap-3 rounded-xl bg-[#000000]/80 p-2.5 pb-1.5 will-change-contents dark:bg-gray-900/50"
+        className="fixed bottom-3 left-2/4 z-[88] box-content flex h-12 origin-[center_bottom] -translate-x-2/4 items-end gap-3 rounded-xl bg-[#000000]/80 p-2.5 pb-1.5 will-change-contents dark:bg-gray-900/50"
         onMouseOver={() => {
           if (!isZooming.current) {
             setHovered(true);

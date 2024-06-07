@@ -67,3 +67,18 @@ html {
   outline: 3px solid #00bcd4;
   outline-offset: 0.125rem;
 }
+
+.fade-enter {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}

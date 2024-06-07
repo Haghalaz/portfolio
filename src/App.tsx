@@ -11,10 +11,11 @@ import useThemeInit from '@hooks/useThemeInit';
 import { SongProvider } from '@contexts/songContext';
 
 import CurrentSong from '@molecules/currentSong';
-import Toolbar from '@molecules/toolbar/';
-import Demo from '@molecules/demo/';
+import Toolbar from '@molecules/toolbar';
+import Demo from '@molecules/demo';
+import LockPage from '@molecules/startPage';
 
-import Content from '@organisms/content/';
+import Content from '@organisms/content';
 
 function App() {
   useThemeInit();
@@ -33,6 +34,8 @@ function App() {
 
   return (
     <main className="relative h-dvh w-dvw select-none overflow-hidden transition-all">
+      <LockPage />
+
       <SongProvider>
         <>
           <Content pages={PAGES} windows={windows} t={t} handleWindows={handleWindows} handleWindowsPriority={handleWindowsPriority} />
@@ -40,8 +43,8 @@ function App() {
         </>
       </SongProvider>
 
-      <Toolbar pages={PAGES} handler={handleWindows} />
       <Demo />
+      <Toolbar pages={PAGES} handler={handleWindows} />
     </main>
   );
 }

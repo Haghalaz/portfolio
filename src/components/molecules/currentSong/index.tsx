@@ -7,7 +7,7 @@ export default function CurrentSong() {
   if (!song) return null;
 
   return (
-    <div className="absolute left-4 top-4 z-0 animate-fade-in">
+    <div className="absolute left-4 top-4 z-[999] animate-fade-in">
       <div className="flex items-center gap-2 opacity-40">
         <Avatar src={`https://skillicons.dev/icons?i=${song.src}`} size="md" alt="avatar" variant="rounded" />
 
