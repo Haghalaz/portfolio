@@ -10,8 +10,11 @@ export default defineConfig({
     alias: {
       '@src': '/src',
       '@assets': '/src/assets',
-      '@components': '/src/components',
+      '@atoms': '/src/components/atoms',
+      '@molecules': '/src/components/molecules',
+      '@organisms': '/src/components/organisms',
       '@hooks': '/src/utils/hooks',
+      '@contexts': '/src/utils/contexts',
       '@data': '/src/data',
     },
   },

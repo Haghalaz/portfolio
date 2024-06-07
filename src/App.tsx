@@ -3,17 +3,18 @@ import './i18n.js';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import PAGES from '@data/pages.js';
+
 import useLanguageInit from '@hooks/useLanguageInit';
 import useThemeInit from '@hooks/useThemeInit';
 
-import PAGES from '@data/pages.js';
+import { SongProvider } from '@contexts/songContext';
 
-import Toolbar from '@components/toolbar/';
-import Content from '@components/content/';
-import Demo from '@components/demo/';
-import CurrentSong from '@components/currentSong';
+import CurrentSong from '@molecules/currentSong';
+import Toolbar from '@molecules/toolbar/';
+import Demo from '@molecules/demo/';
 
-import { SongProvider } from '@src/utils/contexts/songContext.tsx';
+import Content from '@organisms/content/';
 
 function App() {
   useThemeInit();

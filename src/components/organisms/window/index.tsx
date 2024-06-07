@@ -1,6 +1,6 @@
 import { IconButton } from '@material-tailwind/react';
 import { animated, useSpring } from '@react-spring/web';
-import { useWindowResize } from '@src/utils/hooks/useWindowResize';
+import { useWindowResize } from '@hooks/useWindowResize.ts';
 import { useDrag } from '@use-gesture/react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { TiArrowMinimise } from 'react-icons/ti';

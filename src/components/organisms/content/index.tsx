@@ -1,5 +1,5 @@
-import Window from '@components/window';
-import { PageType } from '@src/data/pages.js';
+import Window from '@organisms/window';
+import { PageType } from '@data/pages.ts';
 import { TFunction } from 'i18next';
 
 type ContentProps = {
