@@ -34,6 +34,14 @@ const PROJECTS: ProjectsType[] = [
     repo: 'https://github.com/Haghalaz/movie-discover',
     skills: ['vite', 'react', 'ts', 'tailwind'],
   },
+  {
+    id: 4,
+    title: 'MinedSonar',
+    description: 'MinedSonarDescription',
+    src: 'https://raw.githubusercontent.com/Haghalaz/MinedSonar/main/src/assets/img/mockup.png',
+    repo: 'https://github.com/Haghalaz/MinedSonar',
+    skills: ['vite', 'react', 'ts', 'tailwind'],
+  },
 ];
 
 export default PROJECTS;
