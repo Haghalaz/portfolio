@@ -36,5 +36,8 @@
 
     "MovieDiscover": "Movie Discover",
     "MovieDiscoverDescription": "Welcome to Movie Discover! This project utilizes a movie API to recommend personalized films, assisting users in discovering new titles based on their individual interests and preferences."
+
+    "MovieDiscover": "Mined Sonar",
+    "MovieDiscoverDescription": "Welcome to the Mined Sonar repository, a game inspired by the classic Minesweeper. This project was developed to illustrate the differences between code structured without a design pattern and another using the Atomic Design pattern.",
   }
 }
