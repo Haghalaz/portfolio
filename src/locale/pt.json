@@ -25,18 +25,14 @@
     "Fav": "Favorito",
 
     "ProjectsGallery": "Galeria de Projetos",
-
     "TechnologiesUsed": "Tecnologias utilizadas",
 
     "Portfolio": "Portfólio",
     "PortfolioDescription": "O desenvolvimento do portfólio incorpora Spring.js para animações dinâmicas e Gesture React para interatividade tátil. A eficiente construção com Vite como bundler assegura tempos de carregamento rápidos, enquanto o uso do Tailwind CSS proporciona um estilo consistente e fácil de manter. Com um layout responsivo e gestos intuitivos, o portfólio destaca os projetos e habilidades de forma atraente, oferecendo uma experiência de usuário aprimorada.",
-
     "Bounce": "BOUNCE",
     "BounceDescription": "BOUNCE é um projeto projetado para explorar as capacidades do Pixi.js. Utilizando React, Vite, Tailwind CSS e Pixi.js, BOUNCE é um projeto de desenvolvimento web com renderização 2D cativante e experiências interativas.",
-
     "MovieDiscover": "\"Movie Discover\" (Descoberta de filmes)",
     "MovieDiscoverDescription": "Bem-vindo ao Movie Discover! Este projeto utiliza uma API de filmes para recomendar filmes personalizados, ajudando os usuários a descobrir novos títulos com base em seus interesses e preferências individuais.",
-
     "MinedSonar": "Mined Sonar",
     "MinedSonarDescription": "Conheça do Mined Sonar, um jogo inspirado no clássico Campo Minado. Esse projeto foi desenvolvido para ilustrar as diferenças entre o código estruturado sem um padrão de design e outro que usa o padrão Atomic Design."
   }
