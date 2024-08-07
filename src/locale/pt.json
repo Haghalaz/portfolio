@@ -36,5 +36,8 @@
 
     "MovieDiscover": "\"Movie Discover\" (Descoberta de filmes)",
     "MovieDiscoverDescription": "Bem-vindo ao Movie Discover! Este projeto utiliza uma API de filmes para recomendar filmes personalizados, ajudando os usuários a descobrir novos títulos com base em seus interesses e preferências individuais."
+    
+    "MovieDiscover": "Mined Sonar",
+    "MovieDiscoverDescription": "Conheça do Mined Sonar, um jogo inspirado no clássico Campo Minado. Esse projeto foi desenvolvido para ilustrar as diferenças entre o código estruturado sem um padrão de design e outro que usa o padrão Atomic Design.",
   }
 }
