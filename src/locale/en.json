@@ -35,9 +35,9 @@
     "BounceDescription": "BOUNCE is a project designed to explore the capabilities of Pixi.js. Utilizing React, Vite, Tailwind CSS, and Pixi.js, BOUNCE is a web development project with captivating 2D rendering and interactive experiences.",
 
     "MovieDiscover": "Movie Discover",
-    "MovieDiscoverDescription": "Welcome to Movie Discover! This project utilizes a movie API to recommend personalized films, assisting users in discovering new titles based on their individual interests and preferences."
+    "MovieDiscoverDescription": "Welcome to Movie Discover! This project utilizes a movie API to recommend personalized films, assisting users in discovering new titles based on their individual interests and preferences.",
 
     "MovieDiscover": "Mined Sonar",
-    "MovieDiscoverDescription": "Welcome to the Mined Sonar repository, a game inspired by the classic Minesweeper. This project was developed to illustrate the differences between code structured without a design pattern and another using the Atomic Design pattern.",
+    "MovieDiscoverDescription": "Meet Mined Sonar, a game inspired by the classic, a game inspired by the classic Minesweeper. This project was developed to illustrate the differences between code structured without a design pattern and another using the Atomic Design pattern."
   }
 }
