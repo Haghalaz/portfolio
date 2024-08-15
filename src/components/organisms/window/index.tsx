@@ -1,9 +1,9 @@
-import { IconButton } from '@material-tailwind/react';
 import { animated, useSpring } from '@react-spring/web';
 import { useWindowResize } from '@hooks/useWindowResize.ts';
 import { useDrag } from '@use-gesture/react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
-import { TiArrowMinimise } from 'react-icons/ti';
+import { Minimize2 } from 'lucide-react';
+import { Button } from '@atoms/button.tsx';
 
 interface CardProps {
   children: ReactNode;
@@ -100,14 +100,11 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
         height,
       }}
     >
-      <animated.div
-        ref={target}
-        className="flex h-10 w-full cursor-grab touch-none items-center justify-between bg-[#C1D0D9] p-2 active:cursor-grabbing dark:bg-[#181818]"
-      >
+      <animated.div ref={target} className="flex h-10 w-full cursor-grab touch-none items-center justify-between bg-[#C1D0D9] p-2 active:cursor-grabbing dark:bg-[#181818]">
         <small className="select-none font-bold">{name}</small>
-        <IconButton aria-label="Minimize window" onClick={() => handleOpen(name)} variant="text">
-          <TiArrowMinimise className="h-5 w-5 fill-black dark:fill-white" />
-        </IconButton>
+        <Button aria-label="Minimize window" onClick={() => handleOpen(name)}>
+          <Minimize2 className="h-5 w-5 fill-black dark:fill-white" />
+        </Button>
       </animated.div>
 
       <animated.div children={children} className="relative w-full grow overflow-auto" />
