@@ -13,6 +13,8 @@ export default defineConfig({
       '@atoms': '/src/components/atoms',
       '@molecules': '/src/components/molecules',
       '@organisms': '/src/components/organisms',
+      '@pages': '/src/components/pages',
+      '@utils': '/src/utils/',
       '@hooks': '/src/utils/hooks',
       '@contexts': '/src/utils/contexts',
       '@data': '/src/data',
