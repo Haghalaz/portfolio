@@ -1,9 +1,10 @@
-import About from '@src/pages/about';
-import Config from '@src/pages/config';
-import Projects from '@src/pages/projects';
-import Skills from '@src/pages/skills';
-
 import { TFunction } from 'i18next';
+import { lazy, LazyExoticComponent } from 'react';
+
+const About = lazy(() => import('@pages/about'));
+const Config = lazy(() => import('@pages/config'));
+const Projects = lazy(() => import('@pages/projects'));
+const Skills = lazy(() => import('@pages/skills'));
 
 export type PageProps = {
   t: TFunction<'translation', undefined>;
@@ -11,7 +12,7 @@ export type PageProps = {
 
 export type PageType = {
   name: string;
-  page?: ({ t }: PageProps) => JSX.Element;
+  page?: LazyExoticComponent<({ t }: PageProps) => JSX.Element>;
   size: 'sm' | 'md' | 'lg' | 'xl';
   src?: string;
 };
