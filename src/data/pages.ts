@@ -1,12 +1,12 @@
-import { TFunction } from 'i18next';
 import { lazy, LazyExoticComponent } from 'react';
+import { TFunction } from 'i18next';
 
 const About = lazy(() => import('@pages/about'));
 const Config = lazy(() => import('@pages/config'));
 const Projects = lazy(() => import('@pages/projects'));
 const Skills = lazy(() => import('@pages/skills'));
 
-export type PageProps = {
+declare type PageProps = {
   t: TFunction<'translation', undefined>;
 };
 

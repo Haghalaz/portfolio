@@ -1,8 +1,11 @@
-import { animated, useSpring } from '@react-spring/web';
-import { useWindowResize } from '@hooks/useWindowResize.ts';
-import { useDrag } from '@use-gesture/react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
-import { Minimize2 } from 'lucide-react';
+import { animated, useSpring } from '@react-spring/web';
+import { useDrag } from '@use-gesture/react';
+
+import { useWindowResize } from '@hooks/useWindowResize.ts';
+
+import { Minus } from 'lucide-react';
+
 import { Button } from '@atoms/button.tsx';
 
 interface CardProps {
@@ -100,10 +103,14 @@ const Window = ({ children, windows, handleOpen, handlePriority, variant, name }
         height,
       }}
     >
-      <animated.div ref={target} className="flex h-10 w-full cursor-grab touch-none items-center justify-between bg-[#C1D0D9] p-2 active:cursor-grabbing dark:bg-[#181818]">
+      <animated.div
+        ref={target}
+        className="flex h-10 w-full cursor-grab touch-none items-center justify-between bg-[#C1D0D9] p-2 active:cursor-grabbing dark:bg-[#181818]"
+      >
         <small className="select-none font-bold">{name}</small>
-        <Button aria-label="Minimize window" onClick={() => handleOpen(name)}>
-          <Minimize2 className="h-5 w-5 fill-black dark:fill-white" />
+
+        <Button aria-label="Minimize window" className="h-full w-max bg-transparent px-3 py-0" onClick={() => handleOpen(name)}>
+          <Minus className="size-4 stroke-black dark:stroke-white" />
         </Button>
       </animated.div>
 

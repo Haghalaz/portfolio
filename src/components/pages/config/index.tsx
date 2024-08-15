@@ -6,9 +6,14 @@ import { CircleFlag } from 'react-circle-flags';
 import { useTranslation } from 'react-i18next';
 import useThemeInit from '@hooks/useThemeInit.ts';
 
-import { PageProps } from '@data/pages.ts';
 import { Button } from '@atoms/button.tsx';
+import { TFunction } from 'i18next';
+
 type Theme = 'light' | 'dark';
+
+type PageProps = {
+  t: TFunction<'translation', undefined>;
+};
 
 export default function Config({ t }: PageProps) {
   const {
@@ -49,7 +54,13 @@ export default function Config({ t }: PageProps) {
 
         <div className="flex cursor-pointer items-center gap-2">
           <Button aria-label="Change theme" className="h-8 w-8 rounded-full p-2">
-            <Player ref={animation as React.LegacyRef<Player>} keepLastFrame={true} speed={2} src="https://lottie.host/08cb9f05-4ade-42f5-a853-fc39159926b6/DSeqTEo6ka.json" style={{ height: '20px', width: '20px' }} />
+            <Player
+              ref={animation as React.LegacyRef<Player>}
+              keepLastFrame={true}
+              speed={2}
+              src="https://lottie.host/08cb9f05-4ade-42f5-a853-fc39159926b6/DSeqTEo6ka.json"
+              style={{ height: '20px', width: '20px' }}
+            />
           </Button>
           <small className="font-bold">{t(theme)}</small>
         </div>

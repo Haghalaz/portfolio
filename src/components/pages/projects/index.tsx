@@ -1,10 +1,14 @@
-import { PageProps } from '@data/pages.ts';
 import PROJECTS from '@data/projects.ts';
 import { useState } from 'react';
 import { Flower, Github } from 'lucide-react';
 import { Drawer, DrawerContent, DrawerTrigger } from '@atoms/drawer.tsx';
 import { Button } from '@atoms/button.tsx';
 import { Avatar, AvatarFallback, AvatarImage } from '@atoms/avatar.tsx';
+import { TFunction } from 'i18next';
+
+declare type PageProps = {
+  t: TFunction<'translation', undefined>;
+};
 
 export default function Projects({ t }: PageProps) {
   const [projects] = useState(PROJECTS);
@@ -52,7 +56,12 @@ export default function Projects({ t }: PageProps) {
           <DrawerTrigger>Open</DrawerTrigger>
           <DrawerContent>
             <div className=" grid h-full w-full grid-flow-row grid-cols-1 grid-rows-2 gap-y-8 overflow-auto lg:grid-flow-col lg:grid-cols-6 lg:grid-rows-1 lg:gap-8">
-              <img className="h-full w-full rounded-xl bg-clip-border object-cover shadow-lg shadow-blue-gray-500/40 lg:col-span-2 lg:block" src={currentProject.src} alt={`${currentProject.title} Cover`} loading="lazy" />
+              <img
+                className="shadow-blue-gray-500/40 h-full w-full rounded-xl bg-clip-border object-cover shadow-lg lg:col-span-2 lg:block"
+                src={currentProject.src}
+                alt={`${currentProject.title} Cover`}
+                loading="lazy"
+              />
 
               <div className="col-span-4 flex h-full flex-col justify-between gap-8">
                 <div className="space-y-2">
