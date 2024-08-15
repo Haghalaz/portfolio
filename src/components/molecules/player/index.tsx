@@ -1,9 +1,11 @@
-import { Avatar, IconButton, Slider, Tooltip, Typography } from '@material-tailwind/react';
 import { Dispatch, SetStateAction, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-import { BsPause, BsPlay, BsSkipBackwardFill, BsSkipForwardFill } from 'react-icons/bs';
-import { SongsType } from '@src/data/songs';
-import { IoVolumeLow } from 'react-icons/io5';
+import { SongsType } from '@data/songs.ts';
+import { Avatar, AvatarFallback, AvatarImage } from '@atoms/avatar.tsx';
+import { Pause, Play, SkipBack, SkipForward, Volume2 } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@atoms/tooltip.tsx';
+import { Slider } from '@atoms/slider.tsx';
+import { Button } from '@atoms/button.tsx';
 
 type PlayerProps = {
   player: ReactAudioPlayer | null | undefined;
@@ -40,7 +42,7 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
     return `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
   };
 
-  const calculatePercentage = (value: number, total: number) => (total === 0 ? 0 : (value / total) * 100);
+  const calculatePercentage = (value: number, total: number): number => (total === 0 ? 0 : (value / total) * 100);
 
   return (
     <>
@@ -64,7 +66,10 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
 
         <div className="col-span-2 flex justify-between gap-4 sm:flex-col ">
           <div className="flex items-center justify-center gap-2 lg:justify-start">
-            <Avatar src={`https://skillicons.dev/icons?i=${currentSong?.src}`} size="lg" alt="avatar" variant="rounded" />
+            <Avatar>
+              <AvatarImage src={`https://skillicons.dev/icons?i=${currentSong?.src}`} alt={`${currentSong?.src} song cover`} />
+              <AvatarFallback>{currentSong?.src}</AvatarFallback>
+            </Avatar>
 
             <div className="hidden space-y-1 font-semibold lg:block">
               <p className="text-sm leading-6 text-cyan-500 dark:text-cyan-400">{`#${currentSong?.id}`}</p>
@@ -72,47 +77,46 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
             </div>
           </div>
 
-          <Tooltip content={`${volumeSong}%`}>
-            <div className="flex w-full max-w-max items-center gap-2">
-              <IoVolumeLow className="size-4" />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <div className="flex w-full max-w-max items-center gap-2">
+                  <Volume2 className="size-4" />
 
-              <input
-                value={volumeSong}
-                onChange={(evt) => setVolumeSong(Number(evt.target.value))}
-                className="volume cursor-pointer rounded-full"
-                type="range"
-                name="Volume control"
-                min="0"
-                max="100"
-              />
-            </div>
-          </Tooltip>
+                  <input value={volumeSong} onChange={(evt) => setVolumeSong(Number(evt.target.value))} className="volume cursor-pointer rounded-full" type="range" name="Volume control" min="0" max="100" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{`${volumeSong}%`}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
 
         <div className="col-span-6 w-full lg:px-8">
-          <Slider size="sm" color="cyan" defaultValue={calculatePercentage(timeSong, durationSong)} value={calculatePercentage(timeSong, durationSong)} />
+          <Slider color="cyan" defaultValue={[calculatePercentage(timeSong, durationSong)]} value={[calculatePercentage(timeSong, durationSong)]} />
 
           <div className="flex justify-between py-2 text-sm font-medium tabular-nums leading-6">
             <div className="dark:text-slate-100 text-cyan-500">
-              <Typography variant="small">{formatDuration(timeSong)}</Typography>
+              <small>{formatDuration(timeSong)}</small>
             </div>
             <div className="text-slate-500 dark:text-white">
-              <Typography variant="small">{formatDuration(durationSong)}</Typography>
+              <small>{formatDuration(durationSong)}</small>
             </div>
           </div>
 
           <div className="flex items-center justify-between lg:px-8">
-            <IconButton aria-label="Previous song" size="sm" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1}>
-              <BsSkipBackwardFill />
-            </IconButton>
+            <Button aria-label="Previous song" onClick={handlerChangeMusic('prev')} disabled={currentSong.id === 1}>
+              <SkipBack />
+            </Button>
 
-            <IconButton aria-label="Play/Pause song" onClick={handleStopPlayMusic} size="md" className="rounded-full">
-              {isPlaying ? <BsPause className="h-6 w-6" /> : <BsPlay className="h-6 w-6" />}
-            </IconButton>
+            <Button aria-label="Play/Pause song" onClick={handleStopPlayMusic} className="rounded-full">
+              {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+            </Button>
 
-            <IconButton aria-label="Next Song" onClick={handlerChangeMusic('next')} size="sm" disabled={currentSong.id === songs.length}>
-              <BsSkipForwardFill />
-            </IconButton>
+            <Button aria-label="Next Song" onClick={handlerChangeMusic('next')} disabled={currentSong.id === songs.length}>
+              <SkipForward />
+            </Button>
           </div>
         </div>
       </div>

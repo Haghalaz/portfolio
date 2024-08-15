@@ -4,16 +4,15 @@ import { clamp } from '@react-spring/shared';
 
 import { useWindowResize } from '@hooks/useWindowResize.ts';
 
-import { DockContext } from './DockContext';
+import { DockContext } from '@contexts/dockContext.ts';
 
 interface DockProps {
   children: React.ReactNode;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const DOCK_ZOOM_LIMIT = [-100, 50];
+const DOCK_ZOOM_LIMIT = [-100, 50];
 
-export const Dock = ({ children }: DockProps) => {
+export const ToolbarContent = ({ children }: DockProps) => {
   const [hovered, setHovered] = React.useState(false);
   const [width, setWidth] = React.useState(0);
   const isZooming = React.useRef(false);

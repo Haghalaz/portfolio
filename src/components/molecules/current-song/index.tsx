@@ -1,5 +1,5 @@
 import { useSongContext } from '@src/utils/contexts/songContext.tsx';
-import { Avatar } from '@material-tailwind/react';
+import { Avatar, AvatarFallback, AvatarImage } from '@atoms/avatar.tsx';
 
 export default function CurrentSong() {
   const { song } = useSongContext();
@@ -9,7 +9,10 @@ export default function CurrentSong() {
   return (
     <div className="absolute left-4 top-4 z-[999] animate-fade-in">
       <div className="flex items-center gap-2 opacity-40">
-        <Avatar src={`https://skillicons.dev/icons?i=${song.src}`} size="md" alt="avatar" variant="rounded" />
+        <Avatar>
+          <AvatarImage src={`https://skillicons.dev/icons?i=${song.src}`} alt={`${song.src} song cover`} />
+          <AvatarFallback>{song.src}</AvatarFallback>
+        </Avatar>
 
         <div className="tracking-widest text-white">
           <p>{song.title}</p>

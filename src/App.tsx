@@ -10,10 +10,10 @@ import useThemeInit from '@hooks/useThemeInit';
 
 import { SongProvider } from '@contexts/songContext';
 
-import CurrentSong from '@molecules/currentSong';
-import Toolbar from '@molecules/toolbar';
+import CurrentSong from '@molecules/current-song';
+import LockPage from '@molecules/start-page';
+import Toolbar from '@organisms/toolbar';
 import Demo from '@molecules/demo';
-import LockPage from '@molecules/startPage';
 
 import Content from '@organisms/content';
 

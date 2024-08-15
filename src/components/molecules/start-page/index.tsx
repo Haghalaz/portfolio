@@ -2,28 +2,20 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
+import { ArrowRight } from 'lucide-react';
+
 import profilePic from '@assets/imgs/profilePic.jpeg';
 
-import { Avatar, Button } from '@material-tailwind/react';
+import useDateTime from '@hooks/useDateTime.tsx';
 
-import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Avatar, AvatarFallback, AvatarImage } from '@atoms/avatar.tsx';
+import { Button } from '@atoms/button.tsx';
 
 const LockPage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [open, setOpen] = useState(true);
-  const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-  const [date, setDate] = useState(new Date().toLocaleDateString(i18n.language, { weekday: 'long', day: 'numeric', month: 'long' }));
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      setTime(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-      setDate(now.toLocaleDateString(i18n.language, { weekday: 'long', day: 'numeric', month: 'long' }));
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const { time, date } = useDateTime();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -44,15 +36,18 @@ const LockPage = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Avatar src={profilePic} size="sm" alt="avatar" />
+            <Avatar>
+              <AvatarImage src={profilePic} alt="avatar" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
             <h5 className="text-lg font-semibold ">{t('Dev')}</h5>
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <Button className="flex items-center gap-2" variant="outlined" color="white" onClick={() => setOpen(false)} fullWidth>
+          <Button onClick={() => setOpen(false)}>
             {t('Enter')}
-            <AiOutlineArrowRight />
+            <ArrowRight />
           </Button>
         </div>
       </div>

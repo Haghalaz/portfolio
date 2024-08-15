@@ -2,8 +2,8 @@ import { animated, useIsomorphicLayoutEffect, useSpringValue } from '@react-spri
 import { useGesture } from '@use-gesture/react';
 import { useRef, useState } from 'react';
 
-import { useWindowResize } from '@hooks/useWindowResize';
-import { useDock } from '../Dock/DockContext';
+import { useWindowResize } from '@hooks/useWindowResize.ts';
+import { useDock } from '@contexts/dockContext.ts';
 
 type DockCardProps = {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ type DockCardProps = {
 
 const INITIAL_WIDTH = 48;
 
-export const DockCard = ({ children, handler, page }: DockCardProps) => {
+export const ToolbarCard = ({ children, handler, page }: DockCardProps) => {
   const dock = useDock();
 
   const cardRef = useRef<HTMLButtonElement>(null!);
