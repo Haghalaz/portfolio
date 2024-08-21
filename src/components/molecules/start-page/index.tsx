@@ -27,8 +27,8 @@ const LockPage = () => {
 
   return (
     <CSSTransition in={open} timeout={300} classNames="fade" unmountOnExit>
-      <div className="absolute z-[99] grid size-full animate-fade-in place-items-center text-white backdrop-blur-2xl">
-        <div className="flex flex-col items-center gap-12">
+      <div className="absolute z-[99] grid size-full place-items-center text-white backdrop-blur-2xl">
+        <div className="flex animate-fade-in flex-col items-center gap-12">
           <div className="flex flex-col items-center gap-2 text-center opacity-50">
             <h1 className="font-sans text-9xl font-bold">{time}</h1>
             <h4 className="font-sans text-xl font-light">{date}</h4>
@@ -43,7 +43,7 @@ const LockPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex animate-fade-in flex-col items-center gap-4">
           <Button className="border border-white/40 bg-transparent" onClick={() => setOpen(false)}>
             <p className="text-sm uppercase">{t('Enter')}</p>
             <ArrowRight className="size-4" />

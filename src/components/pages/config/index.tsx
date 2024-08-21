@@ -1,13 +1,13 @@
-import { Player, PlayerDirection } from '@lottiefiles/react-lottie-player';
-
-import { animated, useSpring } from '@react-spring/web';
 import { useRef, useState } from 'react';
+import { animated, useSpring } from '@react-spring/web';
 import { CircleFlag } from 'react-circle-flags';
+import { Player, PlayerDirection } from '@lottiefiles/react-lottie-player';
 import { useTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
+
 import useThemeInit from '@hooks/useThemeInit.ts';
 
 import { Button } from '@atoms/button.tsx';
-import { TFunction } from 'i18next';
 
 type Theme = 'light' | 'dark';
 
@@ -21,15 +21,9 @@ export default function Config({ t }: PageProps) {
   } = useTranslation();
 
   const [theme, setTheme] = useState<Theme>(useThemeInit());
-  const animation = useRef<Player>();
+  const animation = useRef<Player>(null);
 
   const [springs, api] = useSpring(() => ({ from: { opacity: 1, rotate: 0, scale: 1 } }));
-
-  const handleChangeLanguage = () => {
-    const newLanguage = language === 'en' ? 'pt' : 'en';
-    localStorage.language = newLanguage;
-    changeLanguage(newLanguage);
-  };
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -43,7 +37,10 @@ export default function Config({ t }: PageProps) {
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 
-  const triggerAnimation = () => {
+  const switchLanguage = () => {
+    const newLanguage = language === 'en' ? 'pt' : 'en';
+    changeLanguage(newLanguage).then(() => (localStorage.language = newLanguage));
+
     api.start({ from: { scale: 1.2, opacity: 0.5, rotate: 0 }, to: { scale: 1, opacity: 1, rotate: 360 } });
   };
 
@@ -55,7 +52,7 @@ export default function Config({ t }: PageProps) {
         <div className="flex cursor-pointer items-center gap-2">
           <Button aria-label="Change theme" className="h-8 w-8 rounded-full p-2">
             <Player
-              ref={animation as React.LegacyRef<Player>}
+              ref={animation}
               keepLastFrame={true}
               speed={2}
               src="https://lottie.host/08cb9f05-4ade-42f5-a853-fc39159926b6/DSeqTEo6ka.json"
@@ -66,21 +63,15 @@ export default function Config({ t }: PageProps) {
         </div>
       </div>
 
-      <div
-        className="text-start"
-        onClick={() => {
-          triggerAnimation();
-          handleChangeLanguage();
-        }}
-      >
+      <div className="text-start" onClick={switchLanguage}>
         <small className="font-extrathin dark:text-secondary">{t('Language')}</small>
 
         <div className="flex cursor-pointer items-center gap-2">
-          <animated.div style={{ ...springs }}>
-            <Button aria-label="Change language" className="h-8 w-8 rounded-full p-4">
+          <Button aria-label="Change language" className="h-8 w-8 rounded-full p-1.5">
+            <animated.div style={{ ...springs }}>
               <CircleFlag className="h-full w-full" countryCode={language === 'en' ? 'us' : 'br'} />
-            </Button>
-          </animated.div>
+            </animated.div>
+          </Button>
 
           <small className="font-bold">{t(language)}</small>
         </div>
