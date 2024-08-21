@@ -14,4 +14,5 @@ export const SongProvider = ({ children }: { children: JSX.Element }) => {
   return <SongContext.Provider value={{ song, setSong }}>{children}</SongContext.Provider>;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useSongContext = () => useContext(SongContext);
