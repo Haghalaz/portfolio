@@ -1,8 +1,7 @@
-import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CSSTransition } from 'react-transition-group';
 
-import { ArrowRight } from 'lucide-react';
 
 import profilePic from '@assets/images/profilePic.jpeg';
 

@@ -1,11 +1,10 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@atoms/avatar.tsx';
+import { Button } from '@atoms/button.tsx';
+import { Slider } from '@atoms/slider.tsx';
+import { SongsType } from '@data/songs.ts';
+import { Pause, Play, SkipBack, SkipForward, Volume2 } from 'lucide-react';
 import { Dispatch, SetStateAction, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-import { SongsType } from '@data/songs.ts';
-import { Avatar, AvatarFallback, AvatarImage } from '@atoms/avatar.tsx';
-import { Pause, Play, SkipBack, SkipForward, Volume2 } from 'lucide-react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@atoms/tooltip.tsx';
-import { Slider } from '@atoms/slider.tsx';
-import { Button } from '@atoms/button.tsx';
 
 type PlayerProps = {
   player: ReactAudioPlayer | null | undefined;
