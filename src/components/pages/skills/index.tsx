@@ -30,6 +30,10 @@ export default function Skills({ t }: PageProps) {
     await player?.audioEl.current?.play();
   };
 
+  const toggleFavorite = (index: number) => {
+    setSongs((prev) => prev.map((song, i) => (i === index ? { ...song, favorite: !song.favorite } : song)));
+  };
+
   useEffect(() => {
     isPlaying ? setSong(currentSong) : setSong(null);
   }, [isPlaying, currentSong, setSong]);
@@ -52,7 +56,7 @@ export default function Skills({ t }: PageProps) {
           <small className="col-span-1 place-self-center font-mono">{t('Fav')}</small>
         </div>
 
-        <SongsList songs={songs} playMusic={playMusic} />
+        <SongsList songs={songs} playMusic={playMusic} toggleFavorite={toggleFavorite} />
       </div>
 
       <div className="row-span-5 xl:row-span-3">

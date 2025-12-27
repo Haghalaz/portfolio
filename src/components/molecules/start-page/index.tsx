@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import { ArrowRight } from 'lucide-react';
 
-import profilePic from '@assets/imgs/profilePic.jpeg';
+import profilePic from '@assets/images/profilePic.jpeg';
 
 import useDateTime from '@hooks/useDateTime.tsx';
 
@@ -46,7 +46,6 @@ const LockPage = () => {
         <div className="flex animate-fade-in flex-col items-center gap-4">
           <Button className="border border-white/40 bg-transparent" onClick={() => setOpen(false)}>
             <p className="text-sm uppercase">{t('Enter')}</p>
-            <ArrowRight className="size-4" />
           </Button>
         </div>
       </div>

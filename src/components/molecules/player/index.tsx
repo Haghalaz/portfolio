@@ -14,7 +14,7 @@ type PlayerProps = {
   setIsPlaying: Dispatch<SetStateAction<boolean>>;
   currentSong: SongsType;
   songs: SongsType[];
-  playMusic: (index: number) => Promise<void>;
+  playMusic: (index: number) => void;
 };
 
 const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, songs, playMusic }: PlayerProps) => {
@@ -46,7 +46,7 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
 
   return (
     <>
-      <div className="flex h-full w-full grid-flow-col grid-cols-8 flex-col items-center justify-evenly gap-4 overflow-hidden bg-[#f1f1f1] px-4 dark:bg-[#131313] sm:grid lg:gap-4 lg:px-6">
+      <div className="flex h-full w-full grid-flow-col grid-cols-8 flex-col items-center justify-evenly gap-4 overflow-hidden bg-[#f1f1f1] px-4 sm:grid lg:gap-4 lg:px-6 dark:bg-[#131313]">
         <ReactAudioPlayer
           ref={(element) => setPlayer(element)}
           onListen={(evt) => setTimeSong(evt)}
@@ -61,7 +61,7 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
           onPlay={() => setIsPlaying(true)}
           listenInterval={1000}
           className="h-full w-full rounded-none"
-          src={currentSong?.audio}
+          src={currentSong.audio}
         />
 
         <div className="col-span-2 flex justify-between gap-4 sm:flex-col ">
@@ -77,27 +77,18 @@ const AudioPlayer = ({ player, setPlayer, isPlaying, setIsPlaying, currentSong, 
             </div>
           </div>
 
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <div className="flex w-full max-w-max items-center gap-2">
-                  <Volume2 className="size-4" />
+          <div className="flex w-full items-center gap-2 ">
+            <Volume2 className="size-4" />
 
-                  <input value={volumeSong} onChange={(evt) => setVolumeSong(Number(evt.target.value))} className="volume cursor-pointer rounded-full" type="range" name="Volume control" min="0" max="100" />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{`${volumeSong}%`}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+            <Slider className="w-full" value={[volumeSong]} onValueChange={(value) => setVolumeSong(value[0])} />
+          </div>
         </div>
 
         <div className="col-span-6 w-full lg:px-8">
-          <Slider color="cyan" defaultValue={[calculatePercentage(timeSong, durationSong)]} value={[calculatePercentage(timeSong, durationSong)]} />
+          <Slider defaultValue={[calculatePercentage(timeSong, durationSong)]} value={[calculatePercentage(timeSong, durationSong)]} hideThumb />
 
           <div className="flex justify-between py-2 text-sm font-medium tabular-nums leading-6">
-            <div className="dark:text-slate-100 text-cyan-500">
+            <div className="text-cyan-500 dark:text-slate-100">
               <small>{formatDuration(timeSong)}</small>
             </div>
             <div className="text-slate-500 dark:text-white">

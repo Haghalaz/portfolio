@@ -1,4 +1,4 @@
-import profilePic from '@assets/imgs/profilePic.jpeg';
+import profilePic from '@assets/images/profilePic.jpeg';
 
 import { Avatar, AvatarImage } from '@atoms/avatar.tsx';
 import { Phone } from 'lucide-react';
@@ -34,13 +34,6 @@ export default function About({ t }: PageProps) {
         </div>
 
         <div className="flex flex-col justify-between gap-6">
-          <div className="relative flex w-full grow flex-col items-center justify-between  rounded-md bg-[#f1f1f1]/70 bg-clip-border p-4 dark:bg-stone-900/70 dark:text-white dark:!shadow-none">
-            <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=haghalaz&layout=compact&locale=${t('locale')}&hide_border=true&title_color=61DBFB&text_color=fefefe&bg_color=0d1117`}
-              alt="GitHub language stats"
-            />
-          </div>
-
           <div className="relative flex w-full grow flex-row items-center justify-center gap-8 rounded-md bg-[#f1f1f1]/70 bg-clip-border px-12 py-4 transition-shadow dark:bg-stone-900/70 dark:text-white dark:!shadow-none">
             <a href="https://github.com/Haghalaz" target="_blank">
               <img className="h-8 w-8 shadow-lg hover:shadow-stone-500/70" src="https://skillicons.dev/icons?i=github" alt="GitHub logo" />
