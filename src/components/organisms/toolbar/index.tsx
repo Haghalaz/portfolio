@@ -7,19 +7,20 @@ import { PageType } from '@data/pages.ts';
 
 type ToolbarProps = {
   pages: PageType[];
+  windows: string[];
   handler: (page: string) => void;
 };
 
-const Toolbar = ({ pages, handler }: ToolbarProps) => {
+const Toolbar = ({ pages, windows, handler }: ToolbarProps) => {
   return (
     <ToolbarContent>
-      {pages.map(({ name, src }, index) =>
-        src ? (
-          <ToolbarCard handler={handler} page={name} key={index}>
-            <ToolbarCardContent page={name} src={src} />
+      {pages.map(({ name, icon, gradient }) =>
+        icon && gradient ? (
+          <ToolbarCard handler={handler} page={name} active={windows.includes(name)} key={name}>
+            <ToolbarCardContent page={name} icon={icon} gradient={gradient} />
           </ToolbarCard>
         ) : (
-          <ToolbarDivider key={index} />
+          <ToolbarDivider key={name} />
         )
       )}
     </ToolbarContent>

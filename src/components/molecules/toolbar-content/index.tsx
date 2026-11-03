@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { animated, useSpringValue } from '@react-spring/web';
-import { clamp } from '@react-spring/shared';
 
 import { useWindowResize } from '@hooks/useWindowResize.ts';
 
@@ -37,7 +36,7 @@ export const ToolbarContent = ({ children }: DockProps) => {
     <DockContext.Provider value={{ hovered, setIsZooming, width, zoomLevel }}>
       <animated.div
         ref={dockRef}
-        className="fixed bottom-3 left-2/4 z-[88] box-content flex h-12 origin-[center_bottom] -translate-x-2/4 items-end gap-3 rounded-xl bg-stone-200 bg-opacity-30 p-2.5 pb-1.5 will-change-contents dark:bg-stone-800"
+        className="fixed bottom-3 left-2/4 z-[95] box-content flex h-12 origin-[center_bottom] -translate-x-2/4 items-end gap-3 rounded-xl border border-white/20 bg-white/25 p-2.5 pb-1.5 shadow-2xl backdrop-blur-xl will-change-contents dark:bg-stone-800/60"
         onMouseOver={() => !isZooming.current && setHovered(true)}
         onMouseOut={() => setHovered(false)}
         style={{
@@ -47,7 +46,7 @@ export const ToolbarContent = ({ children }: DockProps) => {
               range: [DOCK_ZOOM_LIMIT[0], 1, DOCK_ZOOM_LIMIT[1]],
               output: [2, 1, 0.5],
             })
-            .to((value) => clamp(0.5, 2, value)),
+            .to((value) => Math.min(2, Math.max(0.5, value))),
         }}
       >
         {children}

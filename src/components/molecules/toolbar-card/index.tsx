@@ -9,11 +9,12 @@ type DockCardProps = {
   children: React.ReactNode;
   handler: (page: string) => void;
   page: string;
+  active?: boolean;
 };
 
 const INITIAL_WIDTH = 48;
 
-export const ToolbarCard = ({ children, handler, page }: DockCardProps) => {
+export const ToolbarCard = ({ children, handler, page, active = false }: DockCardProps) => {
   const dock = useDock();
   const cardRef = useRef<HTMLButtonElement>(null!);
   const [elCenterX, setElCenterX] = useState(0);
@@ -45,11 +46,14 @@ export const ToolbarCard = ({ children, handler, page }: DockCardProps) => {
   });
 
   return (
-    <div className="m-0 cursor-pointer rounded-xl border border-solid border-white/10 bg-stone-300 p-0 brightness-[.9] saturate-[.9] transition-all duration-200 hover:brightness-[1.12] hover:saturate-100 dark:bg-stone-900">
+    <div className="relative m-0 cursor-pointer rounded-xl border border-solid border-white/20 p-0 shadow-lg brightness-[.95] transition-[filter] duration-200 hover:brightness-110">
       <animated.button
         ref={cardRef}
+        type="button"
+        aria-label={page}
+        aria-pressed={active}
         onClick={() => handler(page)}
-        className="container flex flex-col items-center gap-4"
+        className="flex flex-col items-center gap-4 rounded-xl"
         style={{
           width: size,
           height: size,
@@ -57,6 +61,13 @@ export const ToolbarCard = ({ children, handler, page }: DockCardProps) => {
       >
         {children}
       </animated.button>
+
+      <span
+        aria-hidden
+        className={`absolute -bottom-1.5 left-1/2 size-1 -translate-x-1/2 rounded-full bg-white shadow transition-all duration-300 ${
+          active ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+        }`}
+      />
     </div>
   );
 };

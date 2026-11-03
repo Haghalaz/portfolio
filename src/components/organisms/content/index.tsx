@@ -12,7 +12,7 @@ type ContentProps = {
 
 function Content({ pages, windows, t, handleWindows, handleWindowsPriority }: ContentProps) {
   return (
-    <div className="absolute grid h-full w-full place-items-center">
+    <div className="absolute inset-0 grid place-items-center pb-[72px] pt-8">
       {pages.map(
         ({ page: Page, name, size }) =>
           Page && (
