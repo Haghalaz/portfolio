@@ -1,0 +1,11 @@
+import{c as s,h as a,j as t}from"./index-1xm2XHsc.js";/**
+ * @license lucide-react v0.427.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const i=s("Building2",[["path",{d:"M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z",key:"1b4qmf"}],["path",{d:"M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2",key:"i71pzd"}],["path",{d:"M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2",key:"10jefs"}],["path",{d:"M10 6h4",key:"1itunk"}],["path",{d:"M10 10h4",key:"tcdvrf"}],["path",{d:"M10 14h4",key:"kelpxr"}],["path",{d:"M10 18h4",key:"1ulq68"}]]);/**
+ * @license lucide-react v0.427.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const r=s("GraduationCap",[["path",{d:"M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",key:"j76jl0"}],["path",{d:"M22 10v6",key:"1lu8f3"}],["path",{d:"M6 12.5V16a6 3 0 0 0 12 0v-3.5",key:"1r8lef"}]]),l=[{id:"squid",name:"Squid Creators",type:"FullTime",mode:"remote",color:"#ec4899",logo:a("assets/images/companies/squid.webp"),roles:[{title:"RoleFrontEndII",start:"2026-10"},{title:"RoleFrontEndI",start:"2024-09",end:"2026-10"}]},{id:"selettra",name:"Selettra Automação e Robótica",type:"FullTime",mode:"onsite",color:"#dc2626",logo:a("assets/images/companies/selettra.webp"),roles:[{title:"RoleMid",start:"2023-05",end:"2024-09",location:"LocationParana"},{title:"RoleJunior",start:"2022-09",end:"2023-05",location:"LocationParana"},{title:"RoleTrainee",start:"2022-06",end:"2022-09"}]},{id:"positivo",name:"Universidade Positivo",kind:"education",type:"Bachelor",color:"#3d62a8",logo:a("assets/images/companies/positivo.webp"),roles:[{title:"DegreeSoftwareEngineering",start:"2021-06",end:"2026-06",periods:[{start:"2021-06",end:"2023-12"},{start:"2024-06",end:"2026-06"}],note:"NoteBreak"}]}],n=({company:e,className:o})=>e.logo?t.jsx("img",{src:e.logo,alt:"",className:`${o} object-cover`}):t.jsx("span",{"aria-hidden":!0,className:`${o} grid place-items-center text-white`,style:{backgroundColor:e.color},children:e.kind==="education"?t.jsx(r,{className:"size-1/2"}):t.jsx(i,{className:"size-1/2"})});export{i as B,l as C,n as a};

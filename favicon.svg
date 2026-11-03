@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="15" fill="#0b0b0f" />
+  <!-- pink chevron + cyan cursor: the code prompt from the profile banner, as a desktop app icon -->
+  <path d="M19 19 L33 32 L19 45" fill="none" stroke="#f0185c" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M37 46 H50" fill="none" stroke="#17b6e8" stroke-width="7.5" stroke-linecap="round" />
+</svg>
