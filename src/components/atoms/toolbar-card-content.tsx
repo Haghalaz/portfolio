@@ -1,20 +1,23 @@
+import { LucideIcon } from 'lucide-react';
+
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@atoms/tooltip.tsx';
 
 type CardProps = {
   page: string;
-  src: string;
+  icon: LucideIcon;
+  gradient: string;
 };
 
-export const ToolbarCardContent = ({ page, src }: CardProps) => (
-  <TooltipProvider>
+export const ToolbarCardContent = ({ page, icon: Icon, gradient }: CardProps) => (
+  <TooltipProvider delayDuration={100}>
     <Tooltip>
       <TooltipTrigger asChild>
-        <span className="relative z-[99] flex h-full w-full items-center justify-center overflow-hidden">
-          <img className="relative z-0 h-3/6 w-6/12 rounded-full" src={src} alt={`${page} cover`} loading="lazy" />
-          <img className="absolute z-[1] h-3/6 w-6/12 translate-y-2.5 rounded-full opacity-40 blur-[10px]" src={src} alt={`${page} cover`} loading="lazy" />
+        <span className={`relative z-[99] flex h-full w-full items-center justify-center overflow-hidden rounded-[inherit] bg-gradient-to-br ${gradient}`}>
+          <Icon className="size-1/2 text-white drop-shadow" strokeWidth={1.75} aria-hidden />
+          <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent" />
         </span>
       </TooltipTrigger>
-      <TooltipContent className="bg-white dark:bg-gray-900">
+      <TooltipContent className="rounded-md bg-white px-2 py-1 text-xs font-medium text-stone-900 shadow-lg dark:bg-stone-900 dark:text-white">
         <p>{page}</p>
       </TooltipContent>
     </Tooltip>
