@@ -7,7 +7,6 @@ export type SongsType = {
   artist: string;
   audio: string;
   color: string[];
-  active: boolean;
   favorite?: boolean;
 };
 
@@ -21,7 +20,6 @@ const SONGS: SongsType[] = [
     artist: 'Pixabay LoFi',
     audio: 'assets/songs/ambient-lofi-lofi-music-344112.mp3',
     color: ['#47609D', '#E88774'],
-    active: true,
   },
   {
     id: 2,
@@ -32,7 +30,6 @@ const SONGS: SongsType[] = [
     artist: 'Snoozybeats',
     audio: 'assets/songs/honey-chill-lofi-309227.mp3',
     color: ['#205950', '#2ab3bf'],
-    active: false,
   },
   {
     id: 3,
@@ -43,7 +40,6 @@ const SONGS: SongsType[] = [
     artist: 'DELOSound',
     audio: 'assets/songs/lofi-chill-456258.mp3',
     color: ['#EF8EA9', '#ab417f'],
-    active: false,
   },
   {
     id: 4,
@@ -54,7 +50,6 @@ const SONGS: SongsType[] = [
     artist: 'CFL_TurningPages',
     audio: 'assets/songs/snowy-window-lofi-455028.mp3',
     color: ['#CD607D', '#c94043'],
-    active: false,
   },
   {
     id: 5,
@@ -65,7 +60,6 @@ const SONGS: SongsType[] = [
     artist: 'Snoozybeats',
     audio: 'assets/songs/warm-breeze-lofi-music-chill-lofi-344259.mp3',
     color: ['#335561', '#3A393E'],
-    active: false,
   },
   {
     id: 6,
@@ -76,7 +70,6 @@ const SONGS: SongsType[] = [
     artist: 'AmbientAUDIOVISION',
     audio: 'assets/songs/coverless-book-lofi-186307.mp3',
     color: ['#2A416D', '#E98087'],
-    active: false,
   },
   {
     id: 7,
@@ -87,7 +80,6 @@ const SONGS: SongsType[] = [
     artist: 'Snoozybeats',
     audio: 'assets/songs/laundromat-lofi-chill-309579.mp3',
     color: ['#BD3D76', '#551853'],
-    active: false,
   },
   {
     id: 8,
@@ -98,7 +90,6 @@ const SONGS: SongsType[] = [
     artist: 'Lofidreams',
     audio: 'assets/songs/lofi-girl-lofi-ambient-music-365952.mp3',
     color: ['#F2C5AB', '#BE5853'],
-    active: false,
   },
   {
     id: 9,
@@ -109,7 +100,6 @@ const SONGS: SongsType[] = [
     artist: 'DELOSound',
     audio: 'assets/songs/lofi-lofi-chill-lofi-girl-456265.mp3',
     color: ['#FF194A', '#41B3B3'],
-    active: false,
   },
   {
     id: 10,
@@ -120,7 +110,6 @@ const SONGS: SongsType[] = [
     artist: 'Pixabay LoFi',
     audio: 'assets/songs/cozy-lofi-background-music-for-study-457198.mp3',
     color: ['#EF8EA9', '#ab417f'],
-    active: false,
   },
   {
     id: 11,
@@ -131,7 +120,6 @@ const SONGS: SongsType[] = [
     artist: 'FASSounds',
     audio: 'assets/songs/good-night-lofi-cozy-chill-music-160166.mp3',
     color: ['#CD607D', '#c94043'],
-    active: false,
   },
   {
     id: 12,
@@ -142,7 +130,6 @@ const SONGS: SongsType[] = [
     artist: 'Lofidreams',
     audio: 'assets/songs/lofi-background-music-326931.mp3',
     color: ['#90B4AA', '#F2AE87'],
-    active: false,
   },
   {
     id: 13,
@@ -153,7 +140,6 @@ const SONGS: SongsType[] = [
     artist: 'DELOSound',
     audio: 'assets/songs/lofi-hiphop-438672.mp3',
     color: ['#B442A1', '#F54F7A'],
-    active: false,
   },
   {
     id: 14,
@@ -164,7 +150,6 @@ const SONGS: SongsType[] = [
     artist: 'CFL_TurningPages',
     audio: 'assets/songs/glow-of-the-tree-455025.mp3',
     color: ['#A35CA0', '#EE8D66'],
-    active: false,
   },
   {
     id: 15,
@@ -175,7 +160,6 @@ const SONGS: SongsType[] = [
     artist: 'Lofidreams',
     audio: 'assets/songs/rainy-lofi-city-lofi-music-332746.mp3',
     color: ['#A35CA0', '#EE8D66'],
-    active: false,
   },
   {
     id: 16,
@@ -186,7 +170,6 @@ const SONGS: SongsType[] = [
     artist: 'Snoozybeats',
     audio: 'assets/songs/lofi-piano-beat-305563.mp3',
     color: ['#205950', '#2ab3bf'],
-    active: false,
   },
   {
     id: 17,
@@ -197,7 +180,6 @@ const SONGS: SongsType[] = [
     artist: 'Lofidreams',
     audio: 'assets/songs/rainy-lofi-city-lofi-music-332746.mp3',
     color: ['#74c7b4', '#1d6d92'],
-    active: false,
   },
   {
     id: 18,
@@ -208,7 +190,6 @@ const SONGS: SongsType[] = [
     artist: 'CFL_TurningPages',
     audio: 'assets/songs/snowy-window-lofi-455028.mp3',
     color: ['#CA483B', '#682C24'],
-    active: false,
   },
   {
     id: 19,
@@ -219,7 +200,6 @@ const SONGS: SongsType[] = [
     artist: 'Snoozybeats',
     audio: 'assets/songs/warm-breeze-lofi-music-chill-lofi-344259.mp3',
     color: ['#C668B2', '#4D92D7'],
-    active: false,
   },
 ];
 
