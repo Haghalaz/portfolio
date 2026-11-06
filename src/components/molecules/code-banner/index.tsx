@@ -133,7 +133,7 @@ export const CodeBanner = () => {
   const { shown, typing } = useTypewriter();
 
   return (
-    <div aria-hidden className="relative flex w-full items-center overflow-hidden bg-[#0a0a0a] px-8 py-6 pl-36 sm:justify-center sm:px-10 sm:py-8">
+    <div aria-hidden className="relative flex w-full items-center justify-center overflow-hidden bg-[#0a0a0a] px-4 pb-16 pt-6 sm:px-10 sm:py-8">
       <div className="relative font-mono text-[8px] leading-[1.6] sm:text-[11px] sm:leading-[1.65]">
         {/* The full text, invisible, reserves the final size so nothing shifts while typing. */}
         <pre className="invisible whitespace-pre">{CODE}</pre>
