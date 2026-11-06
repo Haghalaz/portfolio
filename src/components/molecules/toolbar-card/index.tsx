@@ -12,13 +12,12 @@ type DockCardProps = {
   active?: boolean;
 };
 
-const INITIAL_WIDTH = 48;
-
 export const ToolbarCard = ({ children, handler, page, active = false }: DockCardProps) => {
   const dock = useDock();
+  const INITIAL_WIDTH = dock.size;
   const cardRef = useRef<HTMLButtonElement>(null!);
   const [elCenterX, setElCenterX] = useState(0);
-  const size = useSpringValue(INITIAL_WIDTH, { config: { mass: 0.1, tension: 220 } });
+  const size = useSpringValue(dock.size, { config: { mass: 0.1, tension: 220 } });
 
   useGesture(
     {
@@ -38,7 +37,12 @@ export const ToolbarCard = ({ children, handler, page, active = false }: DockCar
 
   useIsomorphicLayoutEffect(() => {
     if (!dock.hovered) size.start(INITIAL_WIDTH);
-  }, [dock.hovered]);
+  }, [dock.hovered, INITIAL_WIDTH]);
+
+  useIsomorphicLayoutEffect(() => {
+    const { x } = cardRef.current.getBoundingClientRect();
+    setElCenterX(x + INITIAL_WIDTH / 2);
+  }, [INITIAL_WIDTH, dock.width]);
 
   useWindowResize(() => {
     const { x } = cardRef.current.getBoundingClientRect();
